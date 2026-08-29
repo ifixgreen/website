@@ -838,7 +838,7 @@
     const sections=document.querySelectorAll('section[id], .hero');
     const navAnchors=document.querySelectorAll('.nav-links a');
     function setActiveNav(){
-      const pos=window.scrollY+120; let current=''hero'';
+      const pos=window.scrollY+120; let current='hero';
       sections.forEach(s=>{ if(s.offsetTop<=pos && s.offsetTop+s.offsetHeight>pos){ current=s.id; } });
       navAnchors.forEach(a=>{ const href=(a.getAttribute('href')||'').replace('#',''); a.classList.toggle('active', href===current); });
     }
