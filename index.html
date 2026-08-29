@@ -255,57 +255,35 @@
     #services { padding:8rem 0; background:rgba(30,58,95,0.05); }
     .services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2rem; }
     .service-card {
-      background:linear-gradient(145deg, rgba(18,28,50,0.9), rgba(14,22,40,0.9));
-      border:1px solid rgba(43,122,158,0.1);
-      border-radius:16px; padding:2.5rem 2rem; position:relative;
-      overflow:hidden; transition:all 0.5s; cursor:default;
-      transform-style:preserve-3d; perspective:600px;
+      border-radius:18px; position:relative; overflow:hidden; transition:all 0.5s;
+      aspect-ratio:4/5; display:flex; align-items:flex-end;
     }
-    .service-card::before {
-      content:''; position:absolute; top:0; left:0; right:0; height:3px;
-      background:linear-gradient(90deg,#1e3a5f,#2b7a9e,#5dade2);
-      transform:scaleX(0); transition:transform 0.5s; transform-origin:left;
-    }
-    .service-card:hover::before { transform:scaleX(1); }
-    .service-card:hover {
-      transform:translateY(-10px) rotateX(2deg);
-      border-color:rgba(43,122,158,0.35);
-      box-shadow:0 20px 60px rgba(30,58,95,0.25);
-    }
-    .service-icon { font-size:2.5rem; margin-bottom:1.2rem; display:block; filter:drop-shadow(0 0 10px rgba(43,122,158,0.3)); }
-    .service-card h3 { font-family:'Orbitron',sans-serif; font-size:1.1rem; color:#e8edf2; margin-bottom:0.8rem; }
-    .service-card p { color:#5d7289; font-size:0.9rem; line-height:1.7; }
+    .service-card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+    .service-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .service-card:hover .service-photo { transform:scale(1.07); }
+    .service-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,17,32,0.05) 30%, rgba(11,17,32,0.94) 100%); }
+    .service-body { position:relative; z-index:2; padding:1.3rem 1.3rem 1.5rem; width:100%; }
+    .service-body h3 { font-family:'Orbitron',sans-serif; font-size:1.1rem; color:#fff; margin-bottom:0.6rem; }
+    .service-body p { color:#c3cfdb; font-size:0.85rem; line-height:1.6; }
 
     /* ═══════════ PRODUCTS ═══════════ */
     #products { padding:8rem 0; }
     .products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; }
     .product-card {
-      background:rgba(14,22,40,0.9); border:1px solid rgba(43,122,158,0.1);
-      border-radius:16px; overflow:hidden; transition:all 0.5s; position:relative;
+      border-radius:18px; overflow:hidden; transition:all 0.5s; position:relative;
+      aspect-ratio:4/5; display:flex; align-items:flex-end;
     }
-    .product-card:hover {
-      transform:translateY(-8px) scale(1.02);
-      box-shadow:0 20px 50px rgba(30,58,95,0.3);
-      border-color:rgba(43,122,158,0.35);
-    }
-    .product-visual {
-      height:200px; position:relative; overflow:hidden;
-      display:flex; align-items:center; justify-content:center; font-size:5rem;
-    }
-    .product-visual::after {
-      content:''; position:absolute; inset:0;
-      background:linear-gradient(to bottom, transparent 60%, rgba(14,22,40,1));
-    }
-    .product-visual.panels { background:linear-gradient(135deg, #0d1a2d, #152e4a); }
-    .product-visual.inverters { background:linear-gradient(135deg, #0d1f1a, #15302a); }
-    .product-visual.batteries { background:linear-gradient(135deg, #1a1a0d, #2a2510); }
-    .product-info { padding:1.5rem 2rem 2rem; }
-    .product-brand { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:#2b7a9e; margin-bottom:0.5rem; }
-    .product-info h3 { font-size:1.2rem; color:#e8edf2; margin-bottom:0.5rem; }
-    .product-info p { color:#5d7289; font-size:0.85rem; line-height:1.6; }
-    .product-specs { display:flex; gap:1rem; margin-top:1rem; flex-wrap:wrap; }
+    .product-card:hover { transform:translateY(-8px); box-shadow:0 20px 40px rgba(0,0,0,0.4); }
+    .product-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .product-card:hover .product-photo { transform:scale(1.06); }
+    .product-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,17,32,0.05) 25%, rgba(11,17,32,0.95) 100%); }
+    .product-info { position:relative; z-index:2; padding:1.4rem; width:100%; }
+    .product-brand { font-size:0.7rem; letter-spacing:2px; text-transform:uppercase; color:#5dade2; margin-bottom:0.5rem; display:block; }
+    .product-info h3 { font-size:1.2rem; color:#fff; margin-bottom:0.4rem; font-family:'Orbitron',sans-serif; }
+    .product-info p { color:#c3cfdb; font-size:0.85rem; line-height:1.6; }
+    .product-specs { display:flex; gap:0.5rem; margin-top:0.9rem; flex-wrap:wrap; }
     .spec-tag {
-      background:rgba(43,122,158,0.1); border:1px solid rgba(43,122,158,0.2);
+      background:rgba(11,17,32,0.6); border:1px solid rgba(93,173,226,0.4);
       padding:0.3rem 0.7rem; border-radius:20px; font-size:0.7rem;
       color:#5dade2; letter-spacing:1px;
     }
@@ -314,15 +292,14 @@
     #projects { padding:8rem 0; background:rgba(30,58,95,0.05); }
     .projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; }
     .project-card {
-      background:rgba(14,22,40,0.9); border:1px solid rgba(43,122,158,0.1);
-      border-radius:16px; overflow:hidden; transition:all 0.5s; position:relative;
+      border-radius:18px; overflow:hidden; transition:all 0.5s; position:relative;
+      aspect-ratio:4/5; display:flex; align-items:flex-end;
     }
     .project-card:hover {
-      transform:translateY(-5px); border-color:rgba(43,122,158,0.35);
-      box-shadow:0 15px 40px rgba(30,58,95,0.25);
+      transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.4);
     }
     .project-banner {
-      height:220px; position:relative; overflow:hidden;
+      position:absolute; inset:0; overflow:hidden;
     }
     .project-banner img {
       width:100%; height:100%; object-fit:cover;
@@ -331,33 +308,35 @@
     .project-card:hover .project-banner img { transform:scale(1.06); }
     .project-banner::after {
       content:''; position:absolute; inset:0;
-      background:linear-gradient(to bottom, rgba(11,17,32,0.1) 0%, transparent 40%, rgba(11,17,32,0.85) 100%);
+      background:linear-gradient(to bottom, rgba(11,17,32,0.08) 20%, transparent 45%, rgba(11,17,32,0.95) 100%);
     }
     .project-type {
       position:absolute; top:1rem; left:1rem; z-index:2;
-      background:rgba(43,122,158,0.25); border:1px solid rgba(93,173,226,0.4);
+      background:rgba(43,122,158,0.35); border:1px solid rgba(93,173,226,0.5);
       padding:0.25rem 0.7rem; border-radius:20px; font-size:0.65rem;
-      color:#8dc7e8; text-transform:uppercase; letter-spacing:1.5px;
+      color:#fff; text-transform:uppercase; letter-spacing:1.5px;
       backdrop-filter:blur(4px);
     }
-    .project-body { padding:1.5rem 2rem; position:relative; }
-    .project-body h3 { font-size:1.1rem; color:#e8edf2; margin-bottom:0.5rem; }
-    .project-body p { color:#5d7289; font-size:0.85rem; line-height:1.6; }
-    .project-meta { display:flex; gap:1.5rem; margin-top:1rem; font-size:0.75rem; color:#3d5570; }
+    .project-body { position:relative; z-index:2; padding:1.2rem 1.3rem 1.4rem; width:100%; }
+    .project-body h3 { font-size:1.05rem; color:#fff; margin-bottom:0.4rem; font-family:'Orbitron',sans-serif; }
+    .project-body p { color:#c3cfdb; font-size:0.8rem; line-height:1.5; }
+    .project-meta { display:flex; gap:1.2rem; margin-top:0.7rem; font-size:0.7rem; color:#8dc7e8; }
     .project-meta span { display:flex; align-items:center; gap:0.3rem; }
 
     /* ═══════════ WHY US ═══════════ */
     #why-us { padding:8rem 0; }
     .why-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
     .why-card {
-      text-align:center; padding:2.5rem 2rem;
-      border:1px solid rgba(43,122,158,0.08); border-radius:16px;
-      transition:all 0.4s; background:rgba(14,22,40,0.5);
+      border-radius:18px; overflow:hidden; position:relative; transition:all 0.4s;
+      aspect-ratio:4/5; display:flex; align-items:flex-end;
     }
-    .why-card:hover { border-color:rgba(43,122,158,0.25); background:rgba(43,122,158,0.05); transform:translateY(-5px); }
-    .why-icon { font-size:2.5rem; margin-bottom:1rem; display:block; }
-    .why-card h4 { font-family:'Orbitron',sans-serif; font-size:0.95rem; color:#e8edf2; margin-bottom:0.5rem; }
-    .why-card p { color:#5d7289; font-size:0.85rem; line-height:1.6; }
+    .why-card:hover { transform:translateY(-6px); box-shadow:0 18px 38px rgba(0,0,0,0.4); }
+    .why-photo { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transition:transform 0.5s; }
+    .why-card:hover .why-photo { transform:scale(1.06); }
+    .why-overlay { position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,17,32,0.08) 35%, rgba(11,17,32,0.94) 100%); }
+    .why-body { position:relative; z-index:2; padding:1.3rem; width:100%; }
+    .why-body h4 { font-family:'Orbitron',sans-serif; font-size:1rem; color:#fff; margin-bottom:0.5rem; }
+    .why-body p { color:#c3cfdb; font-size:0.85rem; line-height:1.6; }
 
     /* ═══════════ COVERAGE ═══════════ */
     #coverage { padding:6rem 0; background:rgba(30,58,95,0.05); }
@@ -645,12 +624,12 @@
         <p class="section-desc">Comprehensive solar energy solutions from design to lifetime maintenance.</p>
       </div>
       <div class="services-grid">
-        <div class="service-card reveal"><span class="service-icon">🔆</span><h3>Solar Installation</h3><p>Professional design and installation of on-grid, off-grid & hybrid solar power systems for residential and commercial properties.</p></div>
-        <div class="service-card reveal"><span class="service-icon">🔧</span><h3>Maintenance & Servicing</h3><p>Regular system check-ups, panel cleaning, wiring inspection, inverter diagnostics, and component replacement for peak performance.</p></div>
-        <div class="service-card reveal"><span class="service-icon">📐</span><h3>System Design & Consultation</h3><p>Free site surveys and custom system designs tailored to your energy needs. We calculate optimal panel placement and system capacity.</p></div>
-        <div class="service-card reveal"><span class="service-icon">📹</span><h3>Electrical & Security</h3><p>Complete electrical wiring solutions and CCTV security camera installation services for homes and businesses.</p></div>
-        <div class="service-card reveal"><span class="service-icon">🔋</span><h3>Battery Storage</h3><p>Advanced LiFePO4 battery storage systems for energy independence. Store solar power for use during nighttime and outages.</p></div>
-        <div class="service-card reveal"><span class="service-icon">📊</span><h3>Energy Monitoring</h3><p>Smart monitoring solutions to track your solar system's performance, energy production, and savings in real-time.</p></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/rooftop-install.jpg" alt="Solar installation"><div class="service-overlay"></div><div class="service-body"><h3>Solar Installation</h3><p>Professional design and installation of on-grid, off-grid & hybrid solar power systems for residential and commercial properties.</p></div></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/wiring-controller.jpg" alt="Maintenance and servicing"><div class="service-overlay"></div><div class="service-body"><h3>Maintenance & Servicing</h3><p>Regular system check-ups, panel cleaning, wiring inspection, inverter diagnostics, and component replacement for peak performance.</p></div></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/rooftop-green.jpg" alt="System design and consultation"><div class="service-overlay"></div><div class="service-body"><h3>System Design & Consultation</h3><p>Free site surveys and custom system designs tailored to your energy needs. We calculate optimal panel placement and system capacity.</p></div></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/isolator-switch.jpg" alt="Electrical and security"><div class="service-overlay"></div><div class="service-body"><h3>Electrical & Security</h3><p>Complete electrical wiring solutions and CCTV security camera installation services for homes and businesses.</p></div></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/panel-hose.jpg" alt="Battery storage"><div class="service-overlay"></div><div class="service-body"><h3>Battery Storage</h3><p>Advanced LiFePO4 battery storage systems for energy independence. Store solar power for use during nighttime and outages.</p></div></div>
+        <div class="service-card reveal"><img class="service-photo" src="images/sl/inverter-controller.jpg" alt="Energy monitoring"><div class="service-overlay"></div><div class="service-body"><h3>Energy Monitoring</h3><p>Smart monitoring solutions to track your solar system's performance, energy production, and savings in real-time.</p></div></div>
       </div>
     </div>
   </section>
@@ -665,7 +644,8 @@
       </div>
       <div class="products-grid">
         <div class="product-card reveal">
-          <div class="product-visual panels">🔲</div>
+          <img class="product-photo" src="images/sl/rooftop-palms.jpg" alt="Solar panels">
+          <div class="product-overlay"></div>
           <div class="product-info">
             <span class="product-brand">Jinko &bull; JA Solar</span>
             <h3>N-Type Bifacial Solar Panels</h3>
@@ -674,7 +654,8 @@
           </div>
         </div>
         <div class="product-card reveal">
-          <div class="product-visual inverters">⚡</div>
+          <img class="product-photo" src="images/sl/inverter-rack.jpg" alt="Hybrid solar inverters">
+          <div class="product-overlay"></div>
           <div class="product-info">
             <span class="product-brand">Sunways</span>
             <h3>Hybrid Solar Inverters</h3>
@@ -683,7 +664,8 @@
           </div>
         </div>
         <div class="product-card reveal">
-          <div class="product-visual batteries">🔋</div>
+          <img class="product-photo" src="images/sl/inverter-controller.jpg" alt="Battery storage">
+          <div class="product-overlay"></div>
           <div class="product-info">
             <span class="product-brand">Faraday</span>
             <h3>LiFePO4 Battery Storage</h3>
@@ -737,10 +719,10 @@
         <p class="section-desc">From sunlight to powering your home — a simple, efficient four-step process.</p>
       </div>
       <div class="steps-grid">
-        <div class="step-card reveal"><img class="step-img" src="images/icons/capture.jpg" alt="Solar energy capture"><div class="step-overlay"></div><span class="step-num">01</span><div class="step-body"><h4>Solar Energy Capture</h4><p>Photovoltaic panels capture sunlight and convert it into direct current (DC) electricity, ensuring optimal absorption.</p></div></div>
-        <div class="step-card reveal"><img class="step-img" src="images/icons/conversion.jpg" alt="DC to AC conversion"><div class="step-overlay"></div><span class="step-num">02</span><div class="step-body"><h4>DC to AC Conversion</h4><p>Inverters transform direct current into alternating current for household and business use, ensuring efficient power conversion.</p></div></div>
-        <div class="step-card reveal"><img class="step-img" src="images/icons/appliance.jpg" alt="Powering appliances"><div class="step-overlay"></div><span class="step-num">03</span><div class="step-body"><h4>Powering Appliances</h4><p>Converted electricity powers appliances, lighting, and equipment, reducing dependency on the main grid.</p></div></div>
-        <div class="step-card reveal"><img class="step-img" src="images/icons/storage.jpg" alt="Energy storage and grid"><div class="step-overlay"></div><span class="step-num">04</span><div class="step-body"><h4>Energy Storage & Grid</h4><p>Excess energy is stored in batteries or fed into the grid, ensuring uninterrupted power supply and sustainability.</p></div></div>
+        <div class="step-card reveal"><img class="step-img" src="images/sl/rooftop-palms-3.jpg" alt="Solar energy capture"><div class="step-overlay"></div><span class="step-num">01</span><div class="step-body"><h4>Solar Energy Capture</h4><p>Photovoltaic panels capture sunlight and convert it into direct current (DC) electricity, ensuring optimal absorption.</p></div></div>
+        <div class="step-card reveal"><img class="step-img" src="images/sl/inverter-rack.jpg" alt="DC to AC conversion"><div class="step-overlay"></div><span class="step-num">02</span><div class="step-body"><h4>DC to AC Conversion</h4><p>Inverters transform direct current into alternating current for household and business use, ensuring efficient power conversion.</p></div></div>
+        <div class="step-card reveal"><img class="step-img" src="images/sl/roof-green-2.jpg" alt="Powering appliances"><div class="step-overlay"></div><span class="step-num">03</span><div class="step-body"><h4>Powering Appliances</h4><p>Converted electricity powers appliances, lighting, and equipment, reducing dependency on the main grid.</p></div></div>
+        <div class="step-card reveal"><img class="step-img" src="images/sl/panel-hose.jpg" alt="Energy storage and grid"><div class="step-overlay"></div><span class="step-num">04</span><div class="step-body"><h4>Energy Storage & Grid</h4><p>Excess energy is stored in batteries or fed into the grid, ensuring uninterrupted power supply and sustainability.</p></div></div>
       </div>
     </div>
   </section>
@@ -811,10 +793,10 @@
         <p class="section-desc">We work with industry-leading brands to deliver high-quality solar solutions.</p>
       </div>
       <div class="brand-grid">
-        <div class="brand-card reveal"><img class="brand-photo" src="images/icons/brand-panels.jpg" alt="Panels"><div class="brand-overlay"></div><div class="brand-label"><h4>Panels</h4></div></div>
-        <div class="brand-card reveal"><img class="brand-photo" src="images/icons/brand-inverter.jpg" alt="Inverters"><div class="brand-overlay"></div><div class="brand-label"><h4>Inverters</h4></div></div>
-        <div class="brand-card reveal"><img class="brand-photo" src="images/icons/brand-battery.jpg" alt="Batteries"><div class="brand-overlay"></div><div class="brand-label"><h4>Batteries</h4></div></div>
-        <div class="brand-card reveal"><img class="brand-photo" src="images/icons/brand-accessories.jpg" alt="Other Accessories"><div class="brand-overlay"></div><div class="brand-label"><h4>Other Accessories</h4></div></div>
+        <div class="brand-card reveal"><img class="brand-photo" src="images/sl/rooftop-green.jpg" alt="Panels"><div class="brand-overlay"></div><div class="brand-label"><h4>Panels</h4></div></div>
+        <div class="brand-card reveal"><img class="brand-photo" src="images/sl/wiring-controller.jpg" alt="Inverters"><div class="brand-overlay"></div><div class="brand-label"><h4>Inverters</h4></div></div>
+        <div class="brand-card reveal"><img class="brand-photo" src="images/sl/pump-field.jpg" alt="Batteries"><div class="brand-overlay"></div><div class="brand-label"><h4>Batteries</h4></div></div>
+        <div class="brand-card reveal"><img class="brand-photo" src="images/sl/isolator-switch.jpg" alt="Other Accessories"><div class="brand-overlay"></div><div class="brand-label"><h4>Other Accessories</h4></div></div>
       </div>
     </div>
   </section>
@@ -827,10 +809,10 @@
         <h2 class="section-title">The iFix Advantage</h2>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal"><span class="why-icon">🏆</span><h4>SLSEA Certified</h4><p>Government registered and authorized for rooftop solar installations across Sri Lanka.</p></div>
-        <div class="why-card reveal"><span class="why-icon">💰</span><h4>Best Value</h4><p>Competitive pricing with premium components. Maximum ROI on your solar investment.</p></div>
-        <div class="why-card reveal"><span class="why-icon">🛡️</span><h4>Warranty Backed</h4><p>25-year panel warranty, 10-year inverter warranty, and lifetime maintenance support.</p></div>
-        <div class="why-card reveal"><span class="why-icon">⚡</span><h4>Fast Installation</h4><p>Professional installation completed within days, not weeks. Minimal disruption to your routine.</p></div>
+        <div class="why-card reveal"><img class="why-photo" src="images/sl/roof-green-2.jpg" alt="SLSEA certified"><div class="why-overlay"></div><div class="why-body"><h4>SLSEA Certified</h4><p>Government registered and authorized for rooftop solar installations across Sri Lanka.</p></div></div>
+        <div class="why-card reveal"><img class="why-photo" src="images/sl/inverter-rack.jpg" alt="Best value"><div class="why-overlay"></div><div class="why-body"><h4>Best Value</h4><p>Competitive pricing with premium components. Maximum ROI on your solar investment.</p></div></div>
+        <div class="why-card reveal"><img class="why-photo" src="images/sl/worker-roof.jpg" alt="Warranty backed"><div class="why-overlay"></div><div class="why-body"><h4>Warranty Backed</h4><p>25-year panel warranty, 10-year inverter warranty, and lifetime maintenance support.</p></div></div>
+        <div class="why-card reveal"><img class="why-photo" src="images/sl/worker-install.jpg" alt="Fast installation"><div class="why-overlay"></div><div class="why-body"><h4>Fast Installation</h4><p>Professional installation completed within days, not weeks. Minimal disruption to your routine.</p></div></div>
       </div>
     </div>
   </section>
