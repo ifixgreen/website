@@ -26,12 +26,13 @@
     ═══════════════════════════════════════ */
 
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-    html { scroll-behavior:smooth; overflow-x:hidden; }
+    html { scroll-behavior:smooth; overflow-x:hidden; scroll-padding-top:80px; }
     body {
       font-family:'Inter',sans-serif; color:#d0d8e0;
       background:#0b1120; overflow-x:hidden;
     }
     a { color:inherit; text-decoration:none; }
+    img { max-width:100%; display:block; }
 
     /* ═══════════ CURSOR GLOW ═══════════ */
     .cursor-glow {
@@ -44,6 +45,36 @@
 
     /* ═══════════ PARTICLE CANVAS ═══════════ */
     #particles { position:fixed; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+
+    /* ═══════════ SCROLL-TO-TOP BUTTON ═══════════ */
+    .to-top {
+      position:fixed; bottom:6.5rem; right:1.5rem; z-index:1000;
+      width:50px; height:50px; border-radius:50%;
+      background:linear-gradient(135deg,#2b7a9e,#1e3a5f);
+      border:1px solid rgba(93,173,226,0.4); color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.3rem; cursor:pointer; opacity:0; visibility:hidden;
+      transform:translateY(20px); transition:all 0.4s;
+      box-shadow:0 8px 30px rgba(30,58,95,0.4);
+    }
+    .to-top.show { opacity:1; visibility:visible; transform:translateY(0); }
+    .to-top:hover { background:linear-gradient(135deg,#3589b0,#2b7a9e); box-shadow:0 0 25px rgba(93,173,226,0.5); }
+
+    /* ═══════════ WHATSAPP FLOATING BUTTON ═══════════ */
+    .wa-float {
+      position:fixed; bottom:1.5rem; right:1.5rem; z-index:1000;
+      width:58px; height:58px; border-radius:50%;
+      background:#25D366; display:flex; align-items:center; justify-content:center;
+      box-shadow:0 10px 30px rgba(37,211,102,0.35);
+      color:#fff; transition:all 0.3s; border:none;
+    }
+    .wa-float:hover { transform:scale(1.1) translateY(-3px); box-shadow:0 12px 40px rgba(37,211,102,0.5); }
+    .wa-float svg { width:32px; height:32px; fill:#fff; }
+    .wa-float .pulse-ring {
+      position:absolute; inset:0; border-radius:50%;
+      border:2px solid rgba(37,211,102,0.6); animation:waPulse 2s ease-out infinite;
+    }
+    @keyframes waPulse { 0%{transform:scale(1);opacity:1;} 100%{transform:scale(1.7);opacity:0;} }
 
     /* ═══════════ NAV ═══════════ */
     nav {
@@ -68,8 +99,8 @@
       content:''; position:absolute; bottom:-4px; left:0; width:0; height:2px;
       background:linear-gradient(90deg,#2b7a9e,#5dade2); transition:width 0.3s;
     }
-    .nav-links a:hover { color:#5dade2; }
-    .nav-links a:hover::after { width:100%; }
+    .nav-links a:hover, .nav-links a.active { color:#5dade2; }
+    .nav-links a:hover::after, .nav-links a.active::after { width:100%; }
     .nav-cta {
       background:linear-gradient(135deg,#2b7a9e,#1e3a5f);
       color:#fff; padding:0.5rem 1.2rem; border-radius:30px;
@@ -81,10 +112,30 @@
     .menu-toggle { display:none; background:none; border:none; cursor:pointer; }
     .menu-toggle span { display:block; width:24px; height:2px; background:#5dade2; margin:5px 0; transition:0.3s; }
 
+    /* ═══════════ TRUST / CERTIFICATION STRIP ═══════════ */
+    .trust-strip {
+      background:linear-gradient(90deg, rgba(30,58,95,0.6), rgba(43,122,158,0.15), rgba(30,58,95,0.6));
+      border-bottom:1px solid rgba(43,122,158,0.15);
+      padding:0.7rem 1rem; position:relative; z-index:1;
+    }
+    .trust-inner {
+      max-width:1200px; margin:0 auto;
+      display:flex; justify-content:center; align-items:center;
+      flex-wrap:wrap; gap:1rem 2.5rem;
+    }
+    .trust-item {
+      display:flex; align-items:center; gap:0.45rem;
+      font-size:0.72rem; letter-spacing:1px; text-transform:uppercase;
+      color:#7a93ad; font-weight:500;
+    }
+    .trust-item .t-ico { color:#5dade2; font-size:0.85rem; }
+    .trust-item strong { color:#9fb6cc; font-weight:600; }
+
     /* ═══════════ HERO ═══════════ */
     .hero {
       min-height:100vh; display:flex; align-items:center; justify-content:center;
       position:relative; overflow:hidden; perspective:1000px;
+      padding-top:60px;
     }
     .hero-bg {
       position:absolute; inset:0;
@@ -104,6 +155,10 @@
     @keyframes gridMove {
       0% { transform:perspective(500px) rotateX(60deg) translateY(0); }
       100% { transform:perspective(500px) rotateX(60deg) translateY(60px); }
+    }
+    .hero-scroll-hint {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      z-index:2; color:#3d5570; font-size:1.4rem; animation:float 3s ease-in-out infinite;
     }
     .hero-content { text-align:center; z-index:2; padding:2rem; animation:fadeInUp 1s ease-out; }
     .hero-logo { height:120px; margin-bottom:1.5rem; filter:drop-shadow(0 0 30px rgba(43,122,158,0.3)); animation:float 6s ease-in-out infinite; }
@@ -266,20 +321,25 @@
       box-shadow:0 15px 40px rgba(30,58,95,0.25);
     }
     .project-banner {
-      height:180px; position:relative;
-      display:flex; align-items:center; justify-content:center; font-size:4rem;
+      height:220px; position:relative; overflow:hidden;
     }
-    .project-banner.residential { background:linear-gradient(135deg, #0d1a2d, #1a3550); }
-    .project-banner.commercial { background:linear-gradient(135deg, #152e4a, #1e4a6a); }
-    .project-banner.hybrid { background:linear-gradient(135deg, #0d1f2d, #15354a); }
-    .project-banner.offgrid { background:linear-gradient(135deg, #0d2420, #153a35); }
+    .project-banner img {
+      width:100%; height:100%; object-fit:cover;
+      transition:transform 0.5s ease;
+    }
+    .project-card:hover .project-banner img { transform:scale(1.06); }
+    .project-banner::after {
+      content:''; position:absolute; inset:0;
+      background:linear-gradient(to bottom, rgba(11,17,32,0.1) 0%, transparent 40%, rgba(11,17,32,0.85) 100%);
+    }
     .project-type {
-      position:absolute; top:1rem; left:1rem;
-      background:rgba(43,122,158,0.2); border:1px solid rgba(43,122,158,0.4);
+      position:absolute; top:1rem; left:1rem; z-index:2;
+      background:rgba(43,122,158,0.25); border:1px solid rgba(93,173,226,0.4);
       padding:0.25rem 0.7rem; border-radius:20px; font-size:0.65rem;
-      color:#5dade2; text-transform:uppercase; letter-spacing:1.5px;
+      color:#8dc7e8; text-transform:uppercase; letter-spacing:1.5px;
+      backdrop-filter:blur(4px);
     }
-    .project-body { padding:1.5rem 2rem; }
+    .project-body { padding:1.5rem 2rem; position:relative; }
     .project-body h3 { font-size:1.1rem; color:#e8edf2; margin-bottom:0.5rem; }
     .project-body p { color:#5d7289; font-size:0.85rem; line-height:1.6; }
     .project-meta { display:flex; gap:1.5rem; margin-top:1rem; font-size:0.75rem; color:#3d5570; }
@@ -322,14 +382,16 @@
     .contact-detail p { color:#5d7289; font-size:0.85rem; }
     .contact-detail a { color:#5dade2; transition:color 0.3s; }
     .contact-detail a:hover { color:#8dc7e8; }
-    .social-links { display:flex; gap:1rem; margin-top:2rem; }
+    .social-links { display:flex; gap:0.8rem; margin-top:2rem; flex-wrap:wrap; }
     .social-link {
       width:45px; height:45px;
       background:rgba(43,122,158,0.1); border:1px solid rgba(43,122,158,0.2);
       border-radius:12px; display:flex; align-items:center; justify-content:center;
-      font-size:1.2rem; transition:all 0.3s;
+      transition:all 0.3s; text-decoration:none;
     }
+    .social-link svg { width:20px; height:20px; fill:#8a9bb0; transition:all 0.3s; }
     .social-link:hover { background:rgba(43,122,158,0.25); border-color:#2b7a9e; transform:translateY(-3px); }
+    .social-link:hover svg { fill:#5dade2; }
     .contact-form {
       background:rgba(14,22,40,0.9); border:1px solid rgba(43,122,158,0.1);
       border-radius:16px; padding:2.5rem;
@@ -356,13 +418,14 @@
     /* ═══════════ FOOTER ═══════════ */
     footer {
       border-top:1px solid rgba(43,122,158,0.1);
-      padding:3rem 0; text-align:center;
+      padding:3rem 0; text-align:center; background:rgba(11,17,32,0.5);
     }
     .footer-logo-img { height:60px; margin-bottom:0.8rem; opacity:0.8; }
     footer p { color:#3d5570; font-size:0.8rem; }
-    .footer-links { display:flex; justify-content:center; gap:2rem; margin:1rem 0; }
+    .footer-links { display:flex; justify-content:center; gap:2rem; margin:1rem 0; flex-wrap:wrap; }
     .footer-links a { color:#4a5d73; font-size:0.8rem; transition:color 0.3s; }
     .footer-links a:hover { color:#5dade2; }
+    .footer-social { display:flex; justify-content:center; gap:1rem; margin:1.2rem 0; }
 
     /* ═══════════ ANIMATIONS ═══════════ */
     .reveal { opacity:0; transform:translateY(40px); transition:all 0.8s cubic-bezier(0.4,0,0.2,1); }
@@ -392,6 +455,9 @@
       .stat-num { font-size:1.8rem; }
       .hero-logo { height:80px; }
       .products-grid, .projects-grid { grid-template-columns:1fr; }
+      .to-top { bottom:6rem; right:1rem; width:44px; height:44px; }
+      .wa-float { bottom:1rem; right:1rem; width:54px; height:54px; }
+      .trust-item { font-size:0.65rem; }
     }
   </style>
 </head>
@@ -418,6 +484,17 @@
     </div>
   </nav>
 
+  <!-- Trust / Certification Strip -->
+  <div class="trust-strip" style="padding-top:72px;">
+    <div class="trust-inner">
+      <span class="trust-item"><span class="t-ico">✔</span> SLSEA Registered &bull; PV 00214433</span>
+      <span class="trust-item"><span class="t-ico">📅</span> Operating Since <strong>2019</strong></span>
+      <span class="trust-item"><span class="t-ico">🔆</span> Panels: <strong>Jinko &bull; JA Solar</strong></span>
+      <span class="trust-item"><span class="t-ico">⚡</span> Inverters: <strong>Sunways</strong></span>
+      <span class="trust-item"><span class="t-ico">🔋</span> Storage: <strong>LiFePO4 Batteries</strong></span>
+    </div>
+  </div>
+
   <!-- Hero -->
   <section class="hero">
     <div class="hero-bg"></div>
@@ -438,6 +515,7 @@
         <div class="stat"><span class="stat-num" data-target="4">0</span><span class="stat-label">Regions</span></div>
       </div>
     </div>
+    <div class="hero-scroll-hint">▼</div>
   </section>
 
   <!-- About -->
@@ -538,10 +616,26 @@
         <p class="section-desc">A selection of our solar installations across Sri Lanka.</p>
       </div>
       <div class="projects-grid">
-        <div class="project-card reveal"><div class="project-banner residential">🏠</div><span class="project-type">Residential</span><div class="project-body"><h3>5kW Rooftop On-Grid System</h3><p>Complete on-grid solar system installation for residential home, reducing monthly electricity bill by 90%.</p><div class="project-meta"><span>📍 Mannar</span><span>⚡ 5kW</span><span>📋 On-Grid</span></div></div></div>
-        <div class="project-card reveal"><div class="project-banner commercial">🏢</div><span class="project-type">Commercial</span><div class="project-body"><h3>20kW Commercial Solar System</h3><p>Large-scale commercial installation with bifacial panels, delivering significant cost savings for business operations.</p><div class="project-meta"><span>📍 Colombo</span><span>⚡ 20kW</span><span>📋 On-Grid</span></div></div></div>
-        <div class="project-card reveal"><div class="project-banner hybrid">🔄</div><span class="project-type">Hybrid</span><div class="project-body"><h3>10kW Hybrid Solar + Battery</h3><p>Hybrid solar system with LiFePO4 battery backup for complete energy independence during power outages.</p><div class="project-meta"><span>📍 Jaffna</span><span>⚡ 10kW</span><span>📋 Hybrid</span></div></div></div>
-        <div class="project-card reveal"><div class="project-banner offgrid">🏝️</div><span class="project-type">Off-Grid</span><div class="project-body"><h3>Off-Grid Island Installation</h3><p>Standalone solar system with battery storage for locations without access to the national power grid.</p><div class="project-meta"><span>📍 Batticaloa</span><span>⚡ 8kW</span><span>📋 Off-Grid</span></div></div></div>
+        <div class="project-card reveal">
+          <div class="project-banner"><img src="images/projects/solar-install-1.jpg" alt="Residential rooftop solar installation in Mannar" loading="lazy"></div>
+          <span class="project-type">Residential</span>
+          <div class="project-body"><h3>5kW Rooftop On-Grid System</h3><p>Complete on-grid solar system installation for residential home, reducing monthly electricity bill by 90%.</p><div class="project-meta"><span>📍 Mannar</span><span>⚡ 5kW</span><span>📋 On-Grid</span></div></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-banner"><img src="images/projects/solar-install-2.jpg" alt="Commercial solar installation in Colombo" loading="lazy"></div>
+          <span class="project-type">Commercial</span>
+          <div class="project-body"><h3>20kW Commercial Solar System</h3><p>Large-scale commercial installation with bifacial panels, delivering significant cost savings for business operations.</p><div class="project-meta"><span>📍 Colombo</span><span>⚡ 20kW</span><span>📋 On-Grid</span></div></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-banner"><img src="images/projects/inverter.jpg" alt="Sunways hybrid solar inverter installation in Jaffna" loading="lazy"></div>
+          <span class="project-type">Hybrid</span>
+          <div class="project-body"><h3>10kW Hybrid Solar + Battery</h3><p>Hybrid solar system with LiFePO4 battery backup for complete energy independence during power outages.</p><div class="project-meta"><span>📍 Jaffna</span><span>⚡ 10kW</span><span>📋 Hybrid</span></div></div>
+        </div>
+        <div class="project-card reveal">
+          <div class="project-banner"><img src="images/projects/panel-unit.jpg" alt="Off-grid solar panel and communications unit in Batticaloa" loading="lazy"></div>
+          <span class="project-type">Off-Grid</span>
+          <div class="project-body"><h3>Off-Grid Island Installation</h3><p>Standalone solar system with battery storage for locations without access to the national power grid.</p><div class="project-meta"><span>📍 Batticaloa</span><span>⚡ 8kW</span><span>📋 Off-Grid</span></div></div>
+        </div>
       </div>
     </div>
   </section>
@@ -596,9 +690,24 @@
           <div class="contact-item"><div class="contact-icon">✉️</div><div class="contact-detail"><h4>Email</h4><p><a href="mailto:ifixgreensolutions@gmail.com">ifixgreensolutions@gmail.com</a></p></div></div>
           <div class="contact-item"><div class="contact-icon">🕐</div><div class="contact-detail"><h4>Working Hours</h4><p>Mon - Sat: 8:00 AM - 6:00 PM</p></div></div>
           <div class="social-links">
-            <a href="https://www.facebook.com/ifixgreeensolutions" target="_blank" class="social-link" aria-label="Facebook">📘</a>
-            <a href="https://wa.me/94706511656" target="_blank" class="social-link" aria-label="WhatsApp">💬</a>
-            <a href="mailto:ifixgreensolutions@gmail.com" class="social-link" aria-label="Email">📧</a>
+            <a href="https://www.facebook.com/ifixgreeensolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.6 1.6-1.6h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/ifixgreensolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm0 5.6A2.1 2.1 0 1 1 12 9.9a2.1 2.1 0 0 1 0 4.2zM16.6 7.2a.8.8 0 1 1-.8.8.8.8 0 0 1 .8-.8zM12 4c-2.2 0-2.5 0-3.4.05-.9.04-1.5.2-2 .4-.5.2-1 .5-1.4 1-.5.4-.8.9-1 1.4-.2.5-.4 1.1-.4 2C3.8 9.5 3.8 9.8 3.8 12s0 2.5.05 3.4c.04.9.2 1.5.4 2 .2.5.5 1 1 1.4.4.5.9.8 1.4 1 .5.2 1.1.4 2 .4.9.04 1.2.05 3.4.05s2.5 0 3.4-.05c.9-.04 1.5-.2 2-.4.5-.2 1-.5 1.4-1 .5-.4.8-.9 1-1.4.2-.5.4-1.1.4-2 .04-.9.05-1.2.05-3.4s0-2.5-.05-3.4c-.04-.9-.2-1.5-.4-2a3.8 3.8 0 0 0-1-1.4 3.8 3.8 0 0 0-1.4-1c-.5-.2-1.1-.4-2-.4C14.5 4 14.2 4 12 4zm0 1.5c2.1 0 2.4 0 3.3.05.8.04 1.2.17 1.5.28.4.15.6.3.9.6.3.3.5.5.6.9.1.3.2.7.3 1.5.04.9.05 1.2.05 3.2s0 2.3-.05 3.2c-.04.8-.17 1.2-.28 1.5-.1.4-.3.6-.6.9-.3.3-.5.5-.9.6-.3.1-.7.2-1.5.3-.9.04-1.2.05-3.3.05s-2.4 0-3.3-.05c-.8-.04-1.2-.17-1.5-.28-.4-.1-.6-.3-.9-.6-.3-.3-.5-.5-.6-.9-.1-.3-.2-.7-.3-1.5-.04-.9-.05-1.2-.05-3.2s0-2.3.05-3.2c.04-.8.17-1.2.28-1.5.1-.4.3-.6.6-.9.3-.3.5-.5.9-.6.3-.1.7-.2 1.5-.3.9-.04 1.2-.05 3.3-.05z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ifix_green_solutions" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M16.6 4c.3 1.7 1.4 2.9 3.4 3v2.6c-1.2.1-2.3-.3-3.4-1v6c0 3.6-3 5.4-6 4.7-2.2-.5-3.9-2.5-3.9-4.8 0-2.7 2.2-4.9 4.9-4.9.4 0 .8 0 1.1.1v2.7c-.3-.1-.7-.2-1.1-.2-1.3 0-2.3 1.1-2.3 2.4s1 2.4 2.3 2.4c1.5 0 2.6-1.1 2.6-2.8V4z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@ifixgreensolutions5297" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M21.6 7.2c-.2-.8-.8-1.4-1.6-1.6-1.4-.4-7-.4-7-.4s-5.6 0-7 .4c-.8.2-1.4.8-1.6 1.6C4 8.7 4 12 4 12s0 3.3.4 4.8c.2.8.8 1.4 1.6 1.6 1.4.4 7 .4 7 .4s5.6 0 7-.4c-.8 0-1.4-.6-1.6-1.4.4-1.5.4-4.8.4-4.8s0-3.3-.4-4.8zM10 15V9l5 3-5 3z"/></svg>
+            </a>
+            <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+            </a>
+            <a href="mailto:ifixgreensolutions@gmail.com" class="social-link" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6V7l-8 6-8-6z"/></svg>
+            </a>
           </div>
         </div>
         <div class="contact-form reveal">
@@ -637,9 +746,26 @@
       <div class="footer-links">
         <a href="#about">About</a><a href="#services">Services</a><a href="#products">Products</a><a href="#projects">Projects</a><a href="#contact">Contact</a>
       </div>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/ifixgreeensolutions" target="_blank" rel="noopener" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.6 1.6-1.6h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8z"/></svg></a>
+        <a href="https://www.instagram.com/ifixgreensolutions" target="_blank" rel="noopener" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm0 5.6A2.1 2.1 0 1 1 12 9.9a2.1 2.1 0 0 1 0 4.2zM16.6 7.2a.8.8 0 1 1-.8.8.8.8 0 0 1 .8-.8zM12 4c-2.2 0-2.5 0-3.4.05-.9.04-1.5.2-2 .4-.5.2-1 .5-1.4 1-.5.4-.8.9-1 1.4-.2.5-.4 1.1-.4 2C3.8 9.5 3.8 9.8 3.8 12s0 2.5.05 3.4c.04.9.2 1.5.4 2 .2.5.5 1 1 1.4.4.5.9.8 1.4 1 .5.2 1.1.4 2 .4.9.04 1.2.05 3.4.05s2.5 0 3.4-.05c.9-.04 1.5-.2 2-.4.5-.2 1-.5 1.4-1 .5-.4.8-.9 1-1.4.2-.5.4-1.1.4-2 .04-.9.05-1.2.05-3.4s0-2.5-.05-3.4c-.04-.9-.2-1.5-.4-2a3.8 3.8 0 0 0-1-1.4 3.8 3.8 0 0 0-1.4-1c-.5-.2-1.1-.4-2-.4C14.5 4 14.2 4 12 4zm0 1.5c2.1 0 2.4 0 3.3.05.8.04 1.2.17 1.5.28.4.15.6.3.9.6.3.3.5.5.6.9.1.3.2.7.3 1.5.04.9.05 1.2.05 3.2s0 2.3-.05 3.2c-.04.8-.17 1.2-.28 1.5-.1.4-.3.6-.6.9-.3.3-.5.5-.9.6-.3.1-.7.2-1.5.3-.9.04-1.2.05-3.3.05s-2.4 0-3.3-.05c-.8-.04-1.2-.17-1.5-.28-.4-.1-.6-.3-.9-.6-.3-.3-.5-.5-.6-.9-.1-.3-.2-.7-.3-1.5-.04-.9-.05-1.2-.05-3.2s0-2.3.05-3.2c.04-.8.17-1.2.28-1.5.1-.4.3-.6.6-.9.3-.3.5-.5.9-.6.3-.1.7-.2 1.5-.3.9-.04 1.2-.05 3.3-.05z"/></svg></a>
+        <a href="https://www.tiktok.com/@ifix_green_solutions" target="_blank" rel="noopener" class="social-link" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 4c.3 1.7 1.4 2.9 3.4 3v2.6c-1.2.1-2.3-.3-3.4-1v6c0 3.6-3 5.4-6 4.7-2.2-.5-3.9-2.5-3.9-4.8 0-2.7 2.2-4.9 4.9-4.9.4 0 .8 0 1.1.1v2.7c-.3-.1-.7-.2-1.1-.2-1.3 0-2.3 1.1-2.3 2.4s1 2.4 2.3 2.4c1.5 0 2.6-1.1 2.6-2.8V4z"/></svg></a>
+        <a href="https://www.youtube.com/@ifixgreensolutions5297" target="_blank" rel="noopener" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2c-.2-.8-.8-1.4-1.6-1.6-1.4-.4-7-.4-7-.4s-5.6 0-7 .4c-.8.2-1.4.8-1.6 1.6C4 8.7 4 12 4 12s0 3.3.4 4.8c.2.8.8 1.4 1.6 1.6 1.4.4 7 .4 7 .4s5.6 0 7-.4c-.8 0-1.4-.6-1.6-1.4.4-1.5.4-4.8.4-4.8s0-3.3-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+        <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg></a>
+        <a href="mailto:ifixgreensolutions@gmail.com" class="social-link" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6V7l-8 6-8-6z"/></svg></a>
+      </div>
       <p>&copy; 2026 iFix Green Solutions (Pvt) Ltd. All rights reserved. | SLSEA Registered</p>
     </div>
   </footer>
+
+  <!-- Scroll to top -->
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+  <!-- WhatsApp floating button -->
+  <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <span class="pulse-ring"></span>
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+  </a>
 
   <script>
     // Particles
@@ -669,7 +795,8 @@
     document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';});
 
     // Nav scroll
-    window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
+    const navbar=document.getElementById('navbar');
+    window.addEventListener('scroll',()=>{navbar.classList.toggle('scrolled',window.scrollY>50);});
 
     // Mobile menu
     document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open');});
@@ -688,6 +815,22 @@
       card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-0.5,y=(e.clientY-r.top)/r.height-0.5;card.style.transform=`translateY(-10px) rotateY(${x*10}deg) rotateX(${-y*10}deg)`;});
       card.addEventListener('mouseleave',()=>{card.style.transform='translateY(0) rotateY(0) rotateX(0)';});
     });
+
+    // Back to top button
+    const toTop=document.getElementById('toTop');
+    window.addEventListener('scroll',()=>{toTop.classList.toggle('show',window.scrollY>400);},{passive:true});
+    toTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
+
+    // Active nav-link highlight on scroll
+    const sections=document.querySelectorAll('section[id], .hero');
+    const navAnchors=document.querySelectorAll('.nav-links a');
+    function setActiveNav(){
+      const pos=window.scrollY+120; let current=''hero'';
+      sections.forEach(s=>{ if(s.offsetTop<=pos && s.offsetTop+s.offsetHeight>pos){ current=s.id; } });
+      navAnchors.forEach(a=>{ const href=(a.getAttribute('href')||'').replace('#',''); a.classList.toggle('active', href===current); });
+    }
+    window.addEventListener('scroll',setActiveNav,{passive:true});
+    setActiveNav();
   </script>
 </body>
 </html>
