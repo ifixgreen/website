@@ -511,6 +511,10 @@
       .container { padding:0 1.25rem; }
       nav { position:relative; }
       .trust-strip { display:none; }
+      .nav-inner { position:relative; padding:0.6rem 1rem; }
+      .nav-inner > a:first-child { position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); display:flex; justify-content:center; pointer-events:none; }
+      .nav-inner > a:first-child .logo-img { pointer-events:auto; }
+      .menu-toggle { position:relative; z-index:10; margin-left:auto; }
       .nav-links { display:none; }
       .nav-cta { display:none; }
       .menu-toggle { display:block; }
