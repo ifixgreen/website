@@ -369,10 +369,77 @@
     }
     .location-chip:hover { background:rgba(43,122,158,0.15); border-color:rgba(43,122,158,0.4); color:#5dade2; transform:scale(1.05); }
 
+    /* ═══════════ HOW SOLAR WORKS ═══════════ */
+    #how-works { padding:8rem 0; }
+    .steps-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:2rem; }
+    .step-card {
+      background:rgba(30,58,95,0.08); border:1px solid rgba(43,122,158,0.15);
+      border-radius:16px; padding:2rem; position:relative; transition:all 0.3s;
+    }
+    .step-card:hover { border-color:rgba(43,122,158,0.4); background:rgba(43,122,158,0.08); transform:translateY(-5px); }
+    .step-num {
+      font-family:'Orbitron',sans-serif; font-weight:900; font-size:2.2rem;
+      color:rgba(93,173,226,0.25); position:absolute; top:1rem; right:1.5rem;
+    }
+    .step-icon { font-size:2.2rem; display:block; margin-bottom:1rem; }
+    .step-card h4 { font-family:'Orbitron',sans-serif; font-size:0.95rem; color:#e8edf2; margin-bottom:0.6rem; }
+    .step-card p { color:#5d7289; font-size:0.85rem; line-height:1.7; }
+
+    /* ═══════════ ROADMAP ═══════════ */
+    #roadmap { padding:8rem 0; background:rgba(30,58,95,0.05); }
+    .roadmap-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:2rem; }
+    .roadmap-item {
+      background:rgba(10,17,32,0.6); border:1px solid rgba(43,122,158,0.2);
+      border-radius:16px; padding:2rem; position:relative; overflow:hidden; transition:all 0.3s;
+    }
+    .roadmap-item:hover { border-color:rgba(43,122,158,0.45); transform:translateY(-5px); }
+    .roadmap-year {
+      font-family:'Orbitron',sans-serif; font-weight:900; font-size:1.8rem;
+      color:#5dade2; margin-bottom:0.8rem; display:block;
+    }
+    .roadmap-item h4 { color:#e8edf2; font-size:1rem; margin-bottom:0.6rem; font-family:'Orbitron',sans-serif; }
+    .roadmap-item p { color:#5d7289; font-size:0.82rem; line-height:1.7; }
+    .roadmap-flag {
+      display:inline-block; margin-bottom:0.8rem; font-size:0.7rem; letter-spacing:1px;
+      text-transform:uppercase; color:#4CAF50; border:1px solid rgba(76,175,80,0.3);
+      padding:0.25rem 0.7rem; border-radius:20px;
+    }
+    .roadmap-highlight { border-color:rgba(93,173,226,0.5); background:linear-gradient(135deg, rgba(43,122,158,0.15), rgba(10,17,32,0.6)); }
+
+    /* ═══════════ OUR GROWTH ═══════════ */
+    #growth { padding:8rem 0; }
+    .growth-wrap { max-width:860px; margin:0 auto; }
+    .bar-chart { display:flex; align-items:flex-end; gap:1.2rem; height:280px; padding:0 0.5rem; }
+    .bar {
+      flex:1; display:flex; flex-direction:column; justify-content:flex-end; align-items:center;
+      height:100%; position:relative;
+    }
+    .bar-fill {
+      width:100%; max-width:56px; border-radius:8px 8px 0 0;
+      background:linear-gradient(180deg, #5dade2, #2b7a9e);
+      min-height:4px; position:relative; transition:height 1s ease;
+    }
+    .bar:nth-child(2) .bar-fill { background:linear-gradient(180deg, #7ab8e8, #3b8cb0); }
+    .bar:nth-child(3) .bar-fill { background:linear-gradient(180deg, #5dade2, #2b7a9e); }
+    .bar:nth-child(4) .bar-fill { background:linear-gradient(180deg, #4CAF50, #2d6a2e); }
+    .bar-label { margin-top:0.7rem; font-size:0.75rem; color:#8a9bb0; font-family:'Orbitron',sans-serif; }
+    .bar-value { position:absolute; top:-24px; left:50%; transform:translateX(-50%); font-size:0.75rem; color:#5dade2; font-family:'Orbitron',sans-serif; }
+    .growth-note { text-align:center; color:#5d7289; font-size:0.85rem; margin-top:2rem; line-height:1.7; }
+
+    /* ═══════════ BRANDS ═══════════ */
+    #brands { padding:8rem 0; background:rgba(30,58,95,0.05); }
+    .brand-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:2rem; }
+    .brand-card {
+      background:rgba(10,17,32,0.6); border:1px solid rgba(43,122,158,0.2);
+      border-radius:16px; padding:2.5rem 1.5rem; text-align:center; transition:all 0.3s;
+    }
+    .brand-card:hover { border-color:rgba(43,122,158,0.45); transform:translateY(-5px); }
+    .brand-icon { font-size:2.5rem; display:block; margin-bottom:1rem; }
+    .brand-card h4 { font-family:'Orbitron',sans-serif; font-size:0.85rem; color:#e8edf2; letter-spacing:1px; }
+
     /* ═══════════ CONTACT ═══════════ */
     #contact { padding:8rem 0; }
-    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }
-    .contact-info h3 { font-family:'Orbitron',sans-serif; font-size:1.5rem; color:#e8edf2; margin-bottom:1.5rem; }
+    .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; }    .contact-info h3 { font-family:'Orbitron',sans-serif; font-size:1.5rem; color:#e8edf2; margin-bottom:1.5rem; }
     .contact-item { display:flex; gap:1rem; margin-bottom:1.5rem; align-items:flex-start; }
     .contact-icon {
       width:45px; height:45px; min-width:45px;
@@ -479,6 +546,7 @@
         <li><a href="#services">Services</a></li>
         <li><a href="#products">Products</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#roadmap">Journey</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Get Quote</a>
@@ -640,6 +708,97 @@
           <span class="project-type">Off-Grid</span>
           <div class="project-body"><h3>Off-Grid Island Installation</h3><p>Standalone solar system with battery storage for locations without access to the national power grid.</p><div class="project-meta"><span>📍 Batticaloa</span><span>⚡ 8kW</span><span>📋 Off-Grid</span></div></div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How Solar Works -->
+  <section id="how-works">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">The Process</span>
+        <h2 class="section-title">How Solar Energy Works</h2>
+        <p class="section-desc">From sunlight to powering your home — a simple, efficient four-step process.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal"><span class="step-num">01</span><span class="step-icon">☀️</span><h4>Solar Energy Capture</h4><p>Photovoltaic panels capture sunlight and convert it into direct current (DC) electricity, ensuring optimal solar energy absorption and utilization.</p></div>
+        <div class="step-card reveal"><span class="step-num">02</span><span class="step-icon">⚡</span><h4>DC to AC Conversion</h4><p>Inverters transform direct current (DC) into alternating current (AC) for household and business use, providing seamless and efficient power conversion.</p></div>
+        <div class="step-card reveal"><span class="step-num">03</span><span class="step-icon">🔌</span><h4>Powering Appliances</h4><p>Converted electricity powers appliances, lighting, and equipment, reducing dependency on the main grid and ensuring reliable energy distribution.</p></div>
+        <div class="step-card reveal"><span class="step-num">04</span><span class="step-icon">🔋</span><h4>Energy Storage & Grid</h4><p>Excess energy is stored in batteries or fed into the grid for later use, ensuring uninterrupted power supply and sustainability.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Journey</span>
+        <h2 class="section-title">Our Business Roadmap</h2>
+        <p class="section-desc">Company establishment and projects completed over the years.</p>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-item reveal">
+          <span class="roadmap-flag">Established</span>
+          <span class="roadmap-year">2019</span>
+          <h4>Company Registration</h4>
+          <p>Registered under SLSEA on 08.08.2019. Launched with a mission to provide sustainable and affordable solar solutions islandwide.</p>
+        </div>
+        <div class="roadmap-item reveal">
+          <span class="roadmap-flag">Milestone</span>
+          <span class="roadmap-year">2022</span>
+          <h4>92 Projects Completed</h4>
+          <p>Completed 92 projects islandwide, contributing 1.5 MW totally to the grid.</p>
+        </div>
+        <div class="roadmap-item roadmap-highlight reveal">
+          <span class="roadmap-flag">Today</span>
+          <span class="roadmap-year">2025</span>
+          <h4>259 Projects Completed</h4>
+          <p>Completed 259 projects islandwide connected to grid, contributing 4.5 MW totally to the grid. Established branches in Jaffna, Colombo, and Batticaloa.</p>
+        </div>
+        <div class="roadmap-item reveal">
+          <span class="roadmap-flag">Vision</span>
+          <span class="roadmap-year">2028</span>
+          <h4>Carbon Neutral</h4>
+          <p>Achieving complete carbon-neutral operations globally, ensuring long-term environmental stability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Growth -->
+  <section id="growth">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Growth</span>
+        <h2 class="section-title">Projects Over The Years</h2>
+      </div>
+      <div class="growth-wrap reveal">
+        <div class="bar-chart" id="growthChart">
+          <div class="bar"><div class="bar-fill" data-h="18" style="height:18%"></div><span class="bar-label">2020</span></div>
+          <div class="bar"><div class="bar-fill" data-h="40" style="height:40%"></div><span class="bar-label">2021</span></div>
+          <div class="bar"><div class="bar-fill" data-h="82" style="height:82%"></div><span class="bar-label">2022</span></div>
+          <div class="bar"><div class="bar-fill" data-h="90" style="height:90%"></div><span class="bar-label">2023</span></div>
+          <div class="bar"><div class="bar-fill" data-h="100" style="height:100%"></div><span class="bar-label">2025</span></div>
+        </div>
+        <p class="growth-note">From 45 residential &amp; commercial projects in 2021 to 259 completed projects with 4.5 MW to the grid in 2025 — steady growth through innovation and customer-focused solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brands -->
+  <section id="brands">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">Our Partners</span>
+        <h2 class="section-title">Collaborating Brands</h2>
+        <p class="section-desc">We work with industry-leading brands to deliver high-quality solar solutions.</p>
+      </div>
+      <div class="brand-grid">
+        <div class="brand-card reveal"><span class="brand-icon">🔆</span><h4>Panels</h4></div>
+        <div class="brand-card reveal"><span class="brand-icon">⚡</span><h4>Inverters</h4></div>
+        <div class="brand-card reveal"><span class="brand-icon">🔋</span><h4>Batteries</h4></div>
+        <div class="brand-card reveal"><span class="brand-icon">🧰</span><h4>Other Accessories</h4></div>
       </div>
     </div>
   </section>
