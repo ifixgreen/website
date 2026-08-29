@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>document.documentElement.className='js';</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>iFix Green Solutions | Solar Energy Experts in Sri Lanka</title>
@@ -428,8 +429,11 @@
     .footer-social { display:flex; justify-content:center; gap:1rem; margin:1.2rem 0; }
 
     /* ═══════════ ANIMATIONS ═══════════ */
-    .reveal { opacity:0; transform:translateY(40px); transition:all 0.8s cubic-bezier(0.4,0,0.2,1); }
-    .reveal.active { opacity:1; transform:translateY(0); }
+    /* Content visible by default — reveal is a JS-only enhancement.
+       .js .reveal starts hidden so the scroll animation works; without JS
+       (or if JS/observer fails) nothing is ever left invisible. */
+    html.js .reveal { opacity:0; transform:translateY(40px); transition:all 0.8s cubic-bezier(0.4,0,0.2,1); }
+    html.js .reveal.active { opacity:1; transform:translateY(0); }
     @keyframes fadeInUp { from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);} }
     @keyframes float { 0%,100%{transform:translateY(0px);}50%{transform:translateY(-15px);} }
     .float { animation:float 6s ease-in-out infinite; }
@@ -803,8 +807,17 @@
     document.querySelectorAll('.nav-links a').forEach(l=>{l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'));});
 
     // Scroll reveal
-    const observer=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('active'),i*100);});},{threshold:0.1});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    const revealEls=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window&&document.documentElement.classList.contains('js')){
+      const observer=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting&&e.target.classList.contains('reveal')){e.target.classList.add('active');observer.unobserve(e.target);}});},{threshold:0.1});
+      revealEls.forEach(el=>observer.observe(el));
+      // Safety fallback: if the observer hasn't revealed something after 2.5s, force-show it
+      // so NO content is ever left invisible (the 'not all shown' bug).
+      setTimeout(()=>{const obs=revealEls;obs.forEach((el,i)=>{if(el.classList.contains('reveal')&&!el.classList.contains('active'))setTimeout(()=>el.classList.add('active'),i*20);});},2500);
+    } else {
+      // No JS-observer support -> show everything now.
+      revealEls.forEach(el=>el.classList.add('active'));
+    }
 
     // Counter animation
     const cObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){const el=e.target,target=parseFloat(el.dataset.target);let current=0;const step=target/60;const timer=setInterval(()=>{current+=step;if(current>=target){current=target;clearInterval(timer);}el.textContent=(Number.isInteger(target)?Math.floor(current):Math.round(current*10)/10)+'+';},20);cObserver.unobserve(el);}});},{threshold:0.5});
