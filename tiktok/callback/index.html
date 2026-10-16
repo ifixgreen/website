@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Authorization Callback — iFix Green Solutions</title>
+<meta name="description" content="TikTok OAuth 2.0 callback handler for iFix Green Solutions (Pvt) Ltd.">
+<meta name="tiktok-developers-site-verification" content="7oWz5OrxFJj6cmvjJ5QBuYZaugctuiZt">
+<link rel="icon" type="image/png" href="/images/logo.png">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0a1120; --panel:rgba(30,58,95,0.28); --line:rgba(93,173,226,0.28); --txt:#e8edf2; --muted:#8fa3b8; --accent:#5dade2; --ok:#2ecc71; --err:#e74c3c; }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--txt);font-family:'Inter',sans-serif;line-height:1.7;font-weight:300;min-height:100vh;display:flex;flex-direction:column;}
+  .wrap{max-width:780px;width:100%;margin:0 auto;padding:3rem 1.5rem 4rem;flex:1;}
+  header a{display:inline-flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--txt);margin-bottom:2rem;}
+  header img{height:44px;}
+  header span{font-family:'Orbitron',sans-serif;font-weight:700;letter-spacing:.06em;font-size:.95rem;}
+  h1{font-family:'Orbitron',sans-serif;font-size:1.65rem;line-height:1.25;margin-bottom:.5rem;}
+  h2{font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--accent);margin:1.8rem 0 .6rem;letter-spacing:.03em;}
+  p{color:#cfd9e4;font-size:.95rem;margin-bottom:.75rem;}
+  .badge{display:inline-block;padding:.25rem .7rem;border-radius:999px;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.2rem;}
+  .badge.ok{background:rgba(46,204,113,0.15);color:var(--ok);border:1px solid rgba(46,204,113,0.4);}
+  .badge.wait{background:rgba(93,173,226,0.15);color:var(--accent);border:1px solid var(--line);}
+  .badge.err{background:rgba(231,76,60,0.15);color:var(--err);border:1px solid rgba(231,76,60,0.4);}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:1.25rem 1.4rem;margin-top:1rem;}
+  .field{margin-bottom:1rem;}
+  .field:last-child{margin-bottom:0;}
+  .label{font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:.3rem;display:flex;justify-content:space-between;align-items:center;}
+  .codebox{background:#060b14;border:1px solid var(--line);border-radius:8px;padding:.7rem .9rem;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.86rem;color:#fff;word-break:break-all;display:flex;justify-content:space-between;align-items:center;gap:.75rem;}
+  button.copy-btn, button.primary-btn{background:var(--accent);color:#060b14;border:none;border-radius:6px;padding:.4rem .8rem;font-weight:600;font-size:.8rem;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif;}
+  button.primary-btn{padding:.65rem 1.2rem;font-size:.9rem;margin-top:.5rem;}
+  button.copy-btn:hover, button.primary-btn:hover{opacity:.9;}
+  input.txt-in{width:100%;background:#060b14;border:1px solid var(--line);border-radius:8px;padding:.6rem .85rem;color:#fff;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.86rem;margin-bottom:.75rem;}
+  footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem;display:flex;gap:1.4rem;flex-wrap:wrap;}
+  footer a{color:var(--muted);text-decoration:none;}
+  footer a:hover{color:var(--accent);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <a href="/"><img src="/images/logo.png" alt="iFix Green Solutions"><span>iFix Green Solutions</span></a>
+  </header>
+
+  <span id="status-badge" class="badge wait">Ready for TikTok OAuth</span>
+  <h1 id="page-title">TikTok Authorization Callback</h1>
+  <p id="page-desc">This endpoint receives the OAuth 2.0 authorization code from TikTok Login Kit &amp; Content Posting API for <b>iFix Green Solutions (Pvt) Ltd</b>.</p>
+
+  <div id="result-panel" class="panel" style="display:none;">
+    <div class="field">
+      <div class="label"><span>Authorization Code (<code>code</code>)</span></div>
+      <div class="codebox">
+        <span id="val-code">—</span>
+        <button class="copy-btn" onclick="copyText('val-code', this)">Copy Code</button>
+      </div>
+    </div>
+    <div class="field">
+      <div class="label"><span>Granted Scopes (<code>scopes</code>)</span></div>
+      <div class="codebox"><span id="val-scopes">—</span></div>
+    </div>
+    <div class="field">
+      <div class="label"><span>CSRF State (<code>state</code>)</span></div>
+      <div class="codebox"><span id="val-state">—</span></div>
+    </div>
+  </div>
+
+  <div id="error-panel" class="panel" style="display:none;border-color:rgba(231,76,60,0.4);">
+    <div class="field">
+      <div class="label"><span>Error</span></div>
+      <div class="codebox"><span id="val-error">—</span></div>
+    </div>
+    <div class="field">
+      <div class="label"><span>Error Description</span></div>
+      <div class="codebox"><span id="val-error-desc">—</span></div>
+    </div>
+  </div>
+
+  <h2>Connect / Test Authorization Flow</h2>
+  <div class="panel">
+    <p>Once your TikTok Developer App (<b>iFix Green Solutions</b>) is approved with a <b>Client Key</b>, enter it below to launch the OAuth handshake directly:</p>
+    <label class="label" for="client-key-input">TikTok Client Key</label>
+    <input id="client-key-input" class="txt-in" type="text" placeholder="e.g. aw1234567890abcdef">
+    <label class="label" for="scopes-input">Requested Scopes</label>
+    <input id="scopes-input" class="txt-in" type="text" value="user.info.basic,video.upload,video.publish,video.list">
+    <label class="label" for="redirect-input">Redirect URI</label>
+    <input id="redirect-input" class="txt-in" type="text" value="https://ifixgreensolutions.lk/tiktok-callback">
+    <button class="primary-btn" onclick="startOAuth()">Authorize with TikTok →</button>
+  </div>
+
+  <footer>
+    <a href="/">Home</a>
+    <a href="/terms.html">Terms of Service</a>
+    <a href="/privacy.html">Privacy Policy</a>
+    <span>© 2026 iFix Green Solutions (Pvt) Ltd</span>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    var params = new URLSearchParams(window.location.search);
+    var code = params.get('code');
+    var scopes = params.get('scopes') || 'user.info.basic,video.upload,video.publish';
+    var state = params.get('state') || '—';
+    var error = params.get('error');
+    var errorDesc = params.get('error_description');
+
+    var badge = document.getElementById('status-badge');
+    var title = document.getElementById('page-title');
+    var desc = document.getElementById('page-desc');
+
+    // Default redirect URI to current clean origin + path
+    var cleanUrl = window.location.origin + window.location.pathname.replace(/\/index\.html$/, '').replace(/\.html$/, '');
+    if (cleanUrl.endsWith('/') && cleanUrl.length > window.location.origin.length + 1) {
+      cleanUrl = cleanUrl.slice(0, -1);
+    }
+    var redirectInput = document.getElementById('redirect-input');
+    if (redirectInput && window.location.hostname === 'ifixgreensolutions.lk') {
+      redirectInput.value = cleanUrl;
+    }
+
+    if (code) {
+      badge.className = 'badge ok';
+      badge.textContent = 'Authorization Code Received';
+      title.textContent = 'TikTok Account Connected';
+      desc.textContent = 'Copy the authorization code below to exchange it for your access_token and refresh_token.';
+      document.getElementById('result-panel').style.display = 'block';
+      document.getElementById('val-code').textContent = code;
+      document.getElementById('val-scopes').textContent = scopes;
+      document.getElementById('val-state').textContent = state;
+    } else if (error) {
+      badge.className = 'badge err';
+      badge.textContent = 'Authorization Error';
+      title.textContent = 'TikTok Authorization Failed';
+      document.getElementById('error-panel').style.display = 'block';
+      document.getElementById('val-error').textContent = error;
+      document.getElementById('val-error-desc').textContent = errorDesc || 'No description provided.';
+    }
+  })();
+
+  function copyText(id, btn) {
+    var txt = document.getElementById(id).textContent;
+    navigator.clipboard.writeText(txt).then(function() {
+      var orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(function() { btn.textContent = orig; }, 1800);
+    });
+  }
+
+  function startOAuth() {
+    var clientKey = document.getElementById('client-key-input').value.trim();
+    var scopes = document.getElementById('scopes-input').value.trim();
+    var redirectUri = document.getElementById('redirect-input').value.trim();
+    if (!clientKey) {
+      alert('Please enter your TikTok Client Key from developers.tiktok.com first.');
+      return;
+    }
+    var csrfState = Math.random().toString(36).substring(2) + Date.now().toString(36);
+    var authUrl = 'https://www.tiktok.com/v2/auth/authorize/'
+      + '?client_key=' + encodeURIComponent(clientKey)
+      + '&response_type=code'
+      + '&scope=' + encodeURIComponent(scopes)
+      + '&redirect_uri=' + encodeURIComponent(redirectUri)
+      + '&state=' + encodeURIComponent(csrfState);
+    window.location.href = authUrl;
+  }
+</script>
+</body>
+</html>
