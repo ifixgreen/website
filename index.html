@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="ayudha">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -400,6 +400,22 @@
       *{animation-duration:.001s !important;transition-duration:.001s !important;}
     }
     :focus-visible{outline:3px solid rgba(15,54,86,.55);outline-offset:2px;border-radius:6px;}
+  /* ── festival theme (switch with <html data-theme="…">) ── */
+  :root{--fest-bg:#7a3a00;--fest-ink:#fff5e6;--fest-accent:#f6a623;}
+  html[data-theme="ayudha"]{--fest-bg:#7a3a00;--fest-ink:#fff5e6;--fest-accent:#f6a623;}
+  html[data-theme="deepavali"]{--fest-bg:#4a1a2c;--fest-ink:#fff0f4;--fest-accent:#f2b632;}
+  html[data-theme="christmas"]{--fest-bg:#0d3b23;--fest-ink:#f2fbf5;--fest-accent:#e0493c;}
+  html[data-theme="pongal"]{--fest-bg:#5a3b00;--fest-ink:#fff8e1;--fest-accent:#ffcc33;}
+  html[data-theme="newyear"]{--fest-bg:#2a1030;--fest-ink:#fdf3ff;--fest-accent:#ffb020;}
+  html[data-theme="none"] .festival-bar{display:none;}
+  .festival-bar{position:relative;z-index:60;background:var(--fest-bg);color:var(--fest-ink);
+    font-size:13.5px;letter-spacing:.2px;text-align:center;padding:9px 18px;line-height:1.45;}
+  .festival-bar b{color:var(--fest-accent);}
+  .festival-bar a{color:var(--fest-ink);text-decoration:underline;text-underline-offset:2px;}
+  html[data-theme="ayudha"] .offers-band{background:linear-gradient(180deg,#fff3e0 0%,#ffffff 78%);}
+  html[data-theme="ayudha"] .offer-ribbon{background:var(--fest-accent);color:#40260a;}
+  html[data-theme="deepavali"] .offers-band{background:linear-gradient(180deg,#fdf1f5 0%,#ffffff 78%);}
+  html[data-theme="christmas"] .offers-band{background:linear-gradient(180deg,#f0fbf3 0%,#ffffff 78%);}
   /* ── current offers ── */
   .offers-band{background:linear-gradient(180deg,#fff6e9 0%,#ffffff 78%);}
   .card.offer{position:relative;overflow:hidden;border:1px solid #f0d7ad;box-shadow:var(--shadow-md);}
@@ -421,6 +437,9 @@
   </style>
 </head>
 <body>
+
+  <!-- ═══════ FESTIVAL BAR (theme: data-theme on <html>) ═══════ -->
+  <div class="festival-bar">🪔 <b>Ayudha Pooja offer</b> — 6 kW off-grid <b>Rs. 899,000</b> · 20 kW three-phase hybrid <b>Rs. 2,160,000</b> · free site survey · <a href="#offers">see the packages</a></div>
 
   <!-- ═══════ HEADER ═══════ -->
   <header class="site-header" id="siteHeader">
