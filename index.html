@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="ayudha">
+<html lang="en" data-theme="deepavali">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -417,6 +417,8 @@
   html[data-theme="ayudha"] .hero::before{background-image:url('images/theme/ayudha-hero.jpg');background-position:center 62%;opacity:1;}
   html[data-theme="ayudha"] .hero::after{background:linear-gradient(100deg,rgba(4,4,6,.92) 0%,rgba(4,4,6,.55) 42%,rgba(4,4,6,0) 100%),linear-gradient(0deg,rgba(4,4,6,.72) 0%,rgba(4,4,6,0) 26%);}
   html[data-theme="deepavali"] .offers-band{background:linear-gradient(180deg,#fdf1f5 0%,#ffffff 78%);}
+  html[data-theme="deepavali"] .offer-ribbon{background:var(--fest-accent);color:#3a1220;}
+  html[data-theme="deepavali"] .hero::before{background-image:url('images/theme/ayudha-hero.jpg');background-position:center 62%;opacity:.92;filter:hue-rotate(-24deg) saturate(1.15);}
   html[data-theme="christmas"] .offers-band{background:linear-gradient(180deg,#f0fbf3 0%,#ffffff 78%);}
   /* ── current offers ── */
   .offers-band{background:linear-gradient(180deg,#fff6e9 0%,#ffffff 78%);}
@@ -441,7 +443,7 @@
 <body>
 
   <!-- ═══════ FESTIVAL BAR (theme: data-theme on <html>) ═══════ -->
-  <div class="festival-bar">🪔 <b>Ayudha Pooja offer</b> — 6 kW off-grid <b>Rs. 899,000</b> · 20 kW three-phase hybrid <b>Rs. 2,160,000</b> · free site survey · <a href="#offers">see the packages</a></div>
+  <div class="festival-bar">✨ <b>Deepavali offer</b> — light up the house with solar: 6 kW off-grid <b>Rs. 899,000</b> · 20 kW three-phase hybrid <b>Rs. 2,160,000</b> · free site survey · <a href="#offers">see the packages</a></div>
 
   <!-- ═══════ HEADER ═══════ -->
   <header class="site-header" id="siteHeader">
@@ -516,7 +518,29 @@
         <h2>Current Offers</h2>
         <p>Live package prices from the office — call to confirm availability before the offer closes.</p>
       </div>
-      <div class="grid cols-2">
+      <div class="grid cols-3">
+        <article class="card offer reveal">
+          <div class="offer-ribbon">Diwali Mega Super Sale</div>
+          <div class="card-body">
+            <span class="tag offer-tag">Hybrid · Single Phase</span>
+            <h3>5 kW Hybrid Solar System</h3>
+            <div class="price-row">
+              <span class="price">Rs. 1,322,000</span>
+              <span class="was">Rs. 1,478,000</span>
+              <span class="save">Save Rs. 156,000</span>
+            </div>
+            <ul class="offer-list">
+              <li>Sunways 5.0 kW single-phase inverter</li>
+              <li>Feraday 10 kWh lithium battery</li>
+              <li>Jinko 730 W bifacial panels</li>
+              <li>Complete with installation</li>
+            </ul>
+            <div class="offer-cta">
+              <a class="btn btn-amber" href="tel:+94706511656">Call 070 65 11 656</a>
+              <a class="btn btn-ghost" href="https://wa.me/94706511656" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </div>
+        </article>
         <article class="card offer reveal">
           <div class="offer-ribbon">Special Cash Price</div>
           <div class="card-body">
