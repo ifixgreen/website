@@ -64,7 +64,10 @@ All modifications, additions, and milestones are documented here in reverse chro
 ### 2026-11-02
 * **Project Documentation & Work Log Standard:**
   * Updated `README.md` with full infrastructure reference and comprehensive history.
-  * Created `GEMINI.md` to enforce the rule: *all future updates must be recorded in `README.md`*.
+  * Created and updated `GEMINI.md` to strictly enforce:
+    1. **Always read `README.md` before starting any task.**
+    2. **Always update `README.md` work log after any task.**
+    3. **Always commit and push changes to GitHub `main`.**
   * Verified live status of website (HTTP 200 OK), TikTok verification token (`tiktok9fOC1Y7vXgEjjxr3UsyLNI4lEEQwNA15.txt`), and Cloudflare Email Routing records.
 
 ### 2026-11-01
