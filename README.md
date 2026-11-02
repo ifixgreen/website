@@ -67,6 +67,11 @@ All modifications, additions, and milestones are documented here in reverse chro
   * Created `GEMINI.md` to enforce the rule: *all future updates must be recorded in `README.md`*.
   * Verified live status of website (HTTP 200 OK), TikTok verification token (`tiktok9fOC1Y7vXgEjjxr3UsyLNI4lEEQwNA15.txt`), and Cloudflare Email Routing records.
 
+### 2026-11-01
+* **Diwali Festive UI & Offer Card Badges:**
+  * Redesigned offer card badges into corner pill badges sitting cleanly above tags inside cards, preventing clipping from rotated ribbon containers.
+  * Adjusted Diwali card ribbon text formatting for clear visibility across all viewport sizes.
+
 ### 2026-10-19
 * **TikTok App Verification:**
   * Added developer URL-prefix verification file `tiktok9fOC1Y7vXgEjjxr3UsyLNI4lEEQwNA15.txt` for TikTok app ID `7697163022086899732`.
