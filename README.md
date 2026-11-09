@@ -61,6 +61,14 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-08
+* **Weekly figures + 4 Nov Diwali price list:**
+  * Hero, journey "today" node and growth note moved to **350 projects · 4.8 MW · 60 completed in 2026** (company profile PDF replaced in Drive, same file id).
+  * Current Offers re-priced from the 4 Nov post: 5 kW hybrid **Rs. 1,049,000**, 6 kW off-grid **Rs. 999,000**, 20 kW hybrid **Rs. 2,399,000** — price-only cards (the post states no regular price, so the Save badges were removed), and the 6 kW yearly-saving line dropped with the old 899,000 offer.
+  * Equipment lines corrected to the post: 5 kW Sunways 5 kW + Felicity 5 kWh + Jinko 730 W; 6 kW Goodwe 6 kW off-grid + Felicity 5 kWh + Jinko 730 W; 20 kW GoodWe 20 kW + GoodWe 16 kWh + Jinko 730 W.
+  * Festival bar prices moved to the new list; Deepavali theme kept (window runs to 9 Nov).
+  * Verified live: page returns the new prices and 350 on the counters.
+
 ### 2026-11-02
 * **Project Documentation & Work Log Standard:**
   * Updated `README.md` with full infrastructure reference and comprehensive history.
