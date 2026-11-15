@@ -61,6 +61,14 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-15
+* **Weekly figures:** 350 → **353 projects**, **63 completed in 2026**, capacity stays 4.8 MW — on the hero counter, the Today node and the growth note. Company profile rebuilt and the Drive file replaced in place.
+* **Fixed a stale milestone heading:** the 2022 node said "350 Projects Completed" while its own body said 92 — now reads 92.
+* **Offers:** added the Net Plus line under Current Offers — Rs 25,000 per kW of battery storage, capped at Rs 250,000, before 1 January.
+* **Festival theme:** Deepavali taken down (window closed 9 Nov) — `data-theme="none"`, bar gone, which also removes its stale 899,000 / 2,160,000 prices.
+* **Social card footers:** the old "585+ Projects | 42.8MW | Est. 2019" line corrected to **353 Projects | 4.8MW** across the 24 card/video scripts.
+* Verified live: page returns 353, no 350, theme none, rebate line present.
+
 ### 2026-11-08
 * **Weekly figures + 4 Nov Diwali price list:**
   * Hero, journey "today" node and growth note moved to **350 projects · 4.8 MW · 60 completed in 2026** (company profile PDF replaced in Drive, same file id).
