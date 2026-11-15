@@ -61,6 +61,12 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-15 (later)
+* **Single promotion on the page.** The three price cards and the Net Plus rebate note were removed; Current Offers now carries one creative — the storage post (Sun down / Lights on / Bill flat) as `images/offers/storage-home.jpg`, with the 62% → 69% line above it and Call / WhatsApp buttons beneath.
+* The festival bar was deleted from the markup entirely (it still held the old 899,000 and 2,160,000 prices), and the nav label went from **Offers** to **Promotion**.
+* Button colours fixed for the light band — the ghost button was white-on-cream and unreadable.
+* Verified live: no package price remains on the page, the poster renders whole, both buttons legible.
+
 ### 2026-11-15
 * **Weekly figures:** 350 → **353 projects**, **63 completed in 2026**, capacity stays 4.8 MW — on the hero counter, the Today node and the growth note. Company profile rebuilt and the Drive file replaced in place.
 * **Fixed a stale milestone heading:** the 2022 node said "350 Projects Completed" while its own body said 92 — now reads 92.
