@@ -61,6 +61,13 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-20
+* **Admin Executive Review Page Audit & Property-Binding Fixes (`v2.5.5-dev` / `@222`):**
+  * Audited `View_AdminReview.html` and `Js_AdminReview.html` in `Drone Operations/web dev`.
+  * Fixed property-name mismatches in `renderAdminReviewIncentives()` so Daily & Weekly checklist cards accurately display `reviewId`, `weekKey`, `arrivalTime`, `inventoryPhotoUrl`, `droneAccidentScore`, `droneCleaningPhoto1..3`, `vehicleInteriorPhoto1..2`, `vehicleExteriorPhoto1..3`, and `accidentRepairScore`, and pre-load the selected submission into `#modalIncentiveReview`.
+  * Wired `loadIncentiveReviewsFromCloud()` in `Js_Incentives.html` to auto-refresh `updateAdminReviewKpis()` and `renderAdminReviewIncentives()`.
+  * Deployed to Web Development (`@222`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
+
 ### 2026-11-19
 * **Field Crew Operations Incentive Upload, Dedicated Incentive Tab & Admin 1/0 Review System:**
   * Added **Incentive Upload** subview in the **Operations Tab** allowing Operators and Helpers to submit daily check-ins (arrival time, inventory equipment photo, zero drone accident notes) and weekly inspections (3-angle drone cleaning photos, 5-photo vehicle cleaning photos, accident repair notes).
