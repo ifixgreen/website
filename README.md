@@ -62,12 +62,15 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-19
+* **Drone Operations Admin Segmented Workspace Architecture (Operator | Office | Admin):**
+  * Rather than displaying all tabs at once for Admin, partitioned views into three dedicated workspaces: **Operator** (Flight Hub, Vehicle Log, Time Punch, Checklist), **Office** (Orders Hub, Farmers, Accounts, Reviews), and **Admin** (Profit & Loss, Dashboard, User Management, Activity Log).
+  * Added 1-tap workspace mode switcher pill above the floating bottom navigation bar and organized desktop header nav and sidebar.
+  * Deployed to Web Development (`@205`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
 * **Drone Operations Crew Incentive Review & Verification System (1/0 Gate):**
   * Implemented individual operator & helper binary checklist review system (`1` for correct/passed, `0` for wrong/failed) in `Drone Operations/web dev`.
   * **Daily Review**: Arrival time tracking, daily inventory item photo upload & supervisor audit, zero drone accident verification.
   * **Weekly Review**: Drone cleaning verification with 3 angle photos, vehicle cleaning verification with 2 interior + 3 exterior photos, and accident repair work assessment.
   * **Payout Gate**: "Collect Incentive" action on staff leaderboard strictly gated; blocked if any daily or weekly criteria scores `0`.
-  * Deployed to Web Development (`@204`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
 
 ### 2026-11-15 (later)
 * **Project Documentation & Work Log Standard:**
