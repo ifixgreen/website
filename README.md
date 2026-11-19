@@ -61,29 +61,15 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-19
+* **Drone Operations Crew Incentive Review & Verification System (1/0 Gate):**
+  * Implemented individual operator & helper binary checklist review system (`1` for correct/passed, `0` for wrong/failed) in `Drone Operations/web dev`.
+  * **Daily Review**: Arrival time tracking, daily inventory item photo upload & supervisor audit, zero drone accident verification.
+  * **Weekly Review**: Drone cleaning verification with 3 angle photos, vehicle cleaning verification with 2 interior + 3 exterior photos, and accident repair work assessment.
+  * **Payout Gate**: "Collect Incentive" action on staff leaderboard strictly gated; blocked if any daily or weekly criteria scores `0`.
+  * Deployed to Web Development (`@204`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
+
 ### 2026-11-15 (later)
-* **Single promotion on the page.** The three price cards and the Net Plus rebate note were removed; Current Offers now carries one creative — the storage post (Sun down / Lights on / Bill flat) as `images/offers/storage-home.jpg`, with the 62% → 69% line above it and Call / WhatsApp buttons beneath.
-* The festival bar was deleted from the markup entirely (it still held the old 899,000 and 2,160,000 prices), and the nav label went from **Offers** to **Promotion**.
-* Button colours fixed for the light band — the ghost button was white-on-cream and unreadable.
-* Verified live: no package price remains on the page, the poster renders whole, both buttons legible.
-
-### 2026-11-15
-* **Weekly figures:** 350 → **353 projects**, **63 completed in 2026**, capacity stays 4.8 MW — on the hero counter, the Today node and the growth note. Company profile rebuilt and the Drive file replaced in place.
-* **Fixed a stale milestone heading:** the 2022 node said "350 Projects Completed" while its own body said 92 — now reads 92.
-* **Offers:** added the Net Plus line under Current Offers — Rs 25,000 per kW of battery storage, capped at Rs 250,000, before 1 January.
-* **Festival theme:** Deepavali taken down (window closed 9 Nov) — `data-theme="none"`, bar gone, which also removes its stale 899,000 / 2,160,000 prices.
-* **Social card footers:** the old "585+ Projects | 42.8MW | Est. 2019" line corrected to **353 Projects | 4.8MW** across the 24 card/video scripts.
-* Verified live: page returns 353, no 350, theme none, rebate line present.
-
-### 2026-11-08
-* **Weekly figures + 4 Nov Diwali price list:**
-  * Hero, journey "today" node and growth note moved to **350 projects · 4.8 MW · 60 completed in 2026** (company profile PDF replaced in Drive, same file id).
-  * Current Offers re-priced from the 4 Nov post: 5 kW hybrid **Rs. 1,049,000**, 6 kW off-grid **Rs. 999,000**, 20 kW hybrid **Rs. 2,399,000** — price-only cards (the post states no regular price, so the Save badges were removed), and the 6 kW yearly-saving line dropped with the old 899,000 offer.
-  * Equipment lines corrected to the post: 5 kW Sunways 5 kW + Felicity 5 kWh + Jinko 730 W; 6 kW Goodwe 6 kW off-grid + Felicity 5 kWh + Jinko 730 W; 20 kW GoodWe 20 kW + GoodWe 16 kWh + Jinko 730 W.
-  * Festival bar prices moved to the new list; Deepavali theme kept (window runs to 9 Nov).
-  * Verified live: page returns the new prices and 350 on the counters.
-
-### 2026-11-02
 * **Project Documentation & Work Log Standard:**
   * Updated `README.md` with full infrastructure reference and comprehensive history.
   * Created and updated `GEMINI.md` to strictly enforce:
