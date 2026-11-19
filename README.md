@@ -62,6 +62,12 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-19
+* **Field Crew Operations Incentive Upload, Dedicated Incentive Tab & Admin 1/0 Review System:**
+  * Added **Incentive Upload** subview in the **Operations Tab** allowing Operators and Helpers to submit daily check-ins (arrival time, inventory equipment photo, zero drone accident notes) and weekly inspections (3-angle drone cleaning photos, 5-photo vehicle cleaning photos, accident repair notes).
+  * Automatically uploads all submitted photos directly to designated subfolders in Master Google Drive folder `18m5T7l3RBF-cazUyAUv5PGuhdNSqoDr0`.
+  * Added dedicated **Incentive** tab in the bottom navigation for Operators and Helpers (`Home | Operations | Incentive | Orders | Menu`) to view their personal flight acreage, bonus sums, leaderboard, and compliance verification status.
+  * Under the **Incentive Tab**, enabled Admins to review and score each Operator and Helper individually with binary 1/0 toggles (`1 Correct` vs `0 Wrong`), pre-loading uploaded photos from Google Drive for complete visual inspection before approving payouts.
+  * Deployed to Web Development (`@210`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
 * **Centralized Google Drive Storage Routing (Target Master Folder ID: `18m5T7l3RBF-cazUyAUv5PGuhdNSqoDr0`):**
   * Configured `MASTER_DRIVE_FOLDER_ID = '18m5T7l3RBF-cazUyAUv5PGuhdNSqoDr0'` across backend services in `Drone Operations/web dev`.
   * Centralized all photo uploads (flight completion, 3-angle drone cleaning, 5-photo vehicle cleaning, inventory audits, land photos), PDFs (sales invoices, Vyapar daily & batch expense sheets), and documents (deposit slips, CapEx, user avatars) to automatically store in designated subfolders inside the user's master Google Drive folder.
