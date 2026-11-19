@@ -62,6 +62,10 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-19
+* **Centralized Google Drive Storage Routing (Target Master Folder ID: `18m5T7l3RBF-cazUyAUv5PGuhdNSqoDr0`):**
+  * Configured `MASTER_DRIVE_FOLDER_ID = '18m5T7l3RBF-cazUyAUv5PGuhdNSqoDr0'` across backend services in `Drone Operations/web dev`.
+  * Centralized all photo uploads (flight completion, 3-angle drone cleaning, 5-photo vehicle cleaning, inventory audits, land photos), PDFs (sales invoices, Vyapar daily & batch expense sheets), and documents (deposit slips, CapEx, user avatars) to automatically store in designated subfolders inside the user's master Google Drive folder.
+  * Deployed to Web Development (`@207`) at deployment `AKfycbydy-s4t-_W5gFpkZfwAfc4ZJYNT85KtIrTd6ehqh381deSg3Z-J6MadUhYif_PM5ONEw`.
 * **Drone Operations Admin Segmented Workspace Architecture (Operator | Office | Admin):**
   * Rather than displaying all tabs at once for Admin, partitioned views into three dedicated workspaces: **Operator** (Flight Hub, Vehicle Log, Time Punch, Checklist), **Office** (Orders Hub, Farmers, Accounts, Reviews), and **Admin** (Profit & Loss, Dashboard, User Management, Activity Log).
   * Added 1-tap workspace mode switcher pill above the floating bottom navigation bar and organized desktop header nav and sidebar.
