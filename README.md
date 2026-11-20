@@ -62,6 +62,16 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-20
+* **IFIX Admin Portal Complete Overhaul & Route Resolution (`admin.ifixgreensolutions.lk`):**
+  * Built complete, standalone responsive frosted glassmorphism views under `social-dashboard/`:
+    * `admin.html`: Main admin hub layout with real-time Colombo clock, interactive search, KPI metrics, project approval queue, HR pipeline ring chart, PO backlog, and quick links.
+    * `ops.html`: Operations dashboard (`/ops`) featuring live views for Possible Projects (13 awaiting approvals with client specs, district badges), After Sales tickets (8 tickets with priority tags), Complaints log, and quick links to company modules.
+    * `po.html`: Purchase Orders & Stock Entry dashboard (`/po`) with interactive filter pills (`all 12`, `needs entry 12`, `partial 0`, `entered 0`), item stock entry modal, and deletion confirmation.
+    * `users.html`: User Management & Login Roster dashboard (`/users`) with add-user form, 12 registered crew member accounts, live role assignment, and status controls.
+    * `hr-vacancy.html`: Verified existing candidate register with district normalization and inline CV preview.
+  * Updated `deploy-final.sh` to synchronize all 5 core views (`admin.html`, `hr-vacancy.html`, `ops.html`, `po.html`, `users.html`) to `/opt/data/workspace/social-dashboard/` with extensionless routing support (`/ops`, `/po`, `/users`).
+  * Updated local development preview server `scripts/dev_server.py` to route all administrative subpages.
+  * Strictly removed and excluded all Drone Operations references from this project workspace per explicit user directive.
 * **Admin Executive Review Page Audit & Property-Binding Fixes (`v2.5.5-dev` / `@222`):**
   * Audited `View_AdminReview.html` and `Js_AdminReview.html` in `Drone Operations/web dev`.
   * Fixed property-name mismatches in `renderAdminReviewIncentives()` so Daily & Weekly checklist cards accurately display `reviewId`, `weekKey`, `arrivalTime`, `inventoryPhotoUrl`, `droneAccidentScore`, `droneCleaningPhoto1..3`, `vehicleInteriorPhoto1..2`, `vehicleExteriorPhoto1..3`, and `accidentRepairScore`, and pre-load the selected submission into `#modalIncentiveReview`.
