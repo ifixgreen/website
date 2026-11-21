@@ -37,6 +37,10 @@ website/
 ├── CNAME                                       # Custom domain pointer (ifixgreensolutions.lk)
 ├── README.md                                   # Project documentation and work log (this file)
 ├── GEMINI.md                                   # Assistant guidelines & logging rules
+├── css/
+│   └── main.css                                # Extracted modular styling for public website (hero, cards, forms, animations)
+├── js/
+│   └── main.js                                 # Extracted modular client script (mobile menu, calculator, toast, smooth scroll)
 ├── images/                                     # Assets, logos, product photos, project galleries
 │   └── logo.png                                # Official iFix Green Solutions logo
 └── .github/
@@ -60,6 +64,43 @@ This website automatically builds and deploys using **GitHub Actions**:
 ## 📜 Complete Work & Change Log
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
+
+### 2026-11-21
+* **Complete Modular Architecture & Code Line Reduction (Admin Portal & Public Website):**
+  * Segmented and modularized all monolithic code across the entire codebase to minimize lines per file, improve maintainability, and enforce DRY principles:
+    * **Web Components Navigation (`social-dashboard/js/nav-component.js`)**: Replaced repetitive 60+ line SVG navigation blocks across all admin subpages with custom HTML5 Web Components `<ifix-rail active="...">` (desktop left rail) and `<ifix-mobile-nav active="...">` (mobile bottom nav), reducing nav markup to 2 lines per page.
+    * **Modular CSS Architecture (`social-dashboard/css/`)**:
+      * `theme.css`: Core design system variables, glassmorphism background gradients, dot grid mask, typography, and foundational layout.
+      * `navigation.css`: Left desktop rail, mobile bottom bar, header bar, search bar, avatar, and back button styles.
+      * `components.css`: Cards, KPI grids, status badges, buttons, filter pills, tabs, item cards, tables, modal dialogs, and form controls.
+      * `frame-view.css`: Fullscreen container, spinner loader, and Prod/Dev environment switchers for embedded enterprise modules.
+      * `hr-vacancy.css`: District progress bars, candidate cells, role pills, and CV modal styles.
+    * **Modular JavaScript Architecture (`social-dashboard/js/`)**:
+      * `clock.js`: Self-initializing Colombo live time ticker.
+      * `search.js`: Universal client-side search filtering across cards and table rows.
+      * `frame-view.js`: Reusable controller class `FrameViewController` for embedded Google Apps Script applications with Prod/Dev switching, external pop-out, and auto-hiding loader.
+      * `ops-view.js`: Operations view tab switcher.
+      * `po-view.js`: Purchase order filter pills, stock entry modal controller, and deletion confirmation dialog.
+      * `users-view.js`: Staff user management actions (add, deactivate, reset, delete).
+      * `hr-vacancy-data.js` & `hr-vacancy-view.js`: Candidate dataset and DOM rendering functions.
+    * **Admin HTML Line Reductions (Total dropped from 4,689 to 1,492 lines, a 68% overall reduction)**:
+      * `accounting.html`: 401 lines → 64 lines (84% reduction).
+      * `management.html`: 356 lines → 57 lines (84% reduction).
+      * `task-board.html`: 401 lines → 64 lines (84% reduction).
+      * `admin.html`: 618 lines → 197 lines (68% reduction).
+      * `glass-dashboard.html`: Synchronized with `admin.html` (197 lines).
+      * `hr-vacancy.html`: 450 lines → 122 lines (73% reduction).
+      * `po.html`: 816 lines → 270 lines (67% reduction).
+      * `ops.html`: 844 lines → 345 lines (59% reduction).
+      * `users.html`: 803 lines → 373 lines (54% reduction).
+    * **Public Website Modularization (`website/`)**:
+      * Extracted 432 lines of inline CSS from `website/index.html` into `website/css/main.css`.
+      * Extracted 84 lines of inline JavaScript from `website/index.html` into `website/js/main.js`.
+      * Reduced `website/index.html` from 1,160 lines to 646 lines (clean semantic `<section>` blocks).
+    * **Deployment & Server Sync**:
+      * Updated `Weniton/admin page/deploy-final.sh` to copy `css/` and `js/` modular directories directly to production `/opt/data/workspace/social-dashboard/`.
+      * Verified `scripts/dev_server.py` routes all 23 endpoints and serves static CSS/JS assets cleanly.
+    * **Strict Compliance**: Maintained zero Drone Operations references in this project workspace.
 
 ### 2026-11-20
 * **IFIX Admin Portal Core Google Apps Script Enterprise Modules Integration (`admin.ifixgreensolutions.lk`):**
