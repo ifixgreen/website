@@ -66,6 +66,17 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-21
+* **Management Dashboard Audit & Dual-Environment Controller Integration (`management.html`):**
+  * Conducted an in-depth audit of the **Solar Project Management Dashboard** (`Sharon/Management dashboard`):
+    * Verified Google Apps Script backend structure (`SidebarMenu.js`, `DashboardForm.html`, `AutoQuote.js`, `DailyReport.js`, `entrycopy.js`, `appsscript.json`).
+    * Confirmed active project pipeline categories: On Grid, Off Grid, Grid Tied with Battery Backup, and Solar Water Pump with 40+ project milestone checkpoints (Clearance, Quotation, Advance, Site Visit, Panel/Inverter Fitted, CEB File, CEB Submission, Invoicing, Warranty).
+    * Confirmed 5 web app functional tabs: `DATA ENTRY` (search, metadata, milestone grid, batch queue, audit logs), `ON PROCESS`, `TO BE CONFIRMED`, `COMPLETED` (month filters), and `DASH BOARD` (KPI overview).
+  * Upgraded `Weniton/admin page/social-dashboard/management.html`:
+    * Added the frosted-glass environment toggle (`Prod` vs `Dev`) in the page header to match `accounting.html` and `task-board.html`.
+    * Configured dual-endpoint routing in `FrameViewController` pointing to:
+      * **Production**: `AKfycbz7JQ6SCriD7oc7nowq_pAsn7vHRssY8no9W9u_SGaL6bALhw1do0vizr0zJo0haA7QFQ` (`@48`)
+      * **Development**: `AKfycbxX1WfWGuzmSmEd1M3A8EsAOJNcyyo72nK-QAPnNcQMSBLk608bUCalT7GCxvK75z4bGg` (`@2`)
+    * Preserved minimal file size footprint (clean 64 lines).
 * **Complete Modular Architecture & Code Line Reduction (Admin Portal & Public Website):**
   * Segmented and modularized all monolithic code across the entire codebase to minimize lines per file, improve maintainability, and enforce DRY principles:
     * **Web Components Navigation (`social-dashboard/js/nav-component.js`)**: Replaced repetitive 60+ line SVG navigation blocks across all admin subpages with custom HTML5 Web Components `<ifix-rail active="...">` (desktop left rail) and `<ifix-mobile-nav active="...">` (mobile bottom nav), reducing nav markup to 2 lines per page.
