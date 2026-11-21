@@ -62,6 +62,16 @@ This website automatically builds and deploys using **GitHub Actions**:
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
 ### 2026-11-20
+* **IFIX Admin Portal Core Google Apps Script Enterprise Modules Integration (`admin.ifixgreensolutions.lk`):**
+  * Seamlessly integrated 3 enterprise web application dashboards into dedicated frosted glassmorphism iframe views under `social-dashboard/`:
+    * `accounting.html` (`/accounting`, `/ledger`): Embeds **iGroup Ledger** (`AKfycbxsKMkD3iwQ-NTIorD8MIBUJqHzkEXCHLx_GHi0FTBW4LitxdMat__oZE_b6QMNuQDQQA`) for complete double-entry bookkeeping, 18% VAT compliance, and multi-bank reconciliation (Commercial Bank, HNB, Sampath, NTB), complete with a Prod/Dev environment toggle, live reload, and external pop-out actions.
+    * `management.html` (`/management`): Embeds the **Solar Project Management Dashboard** (`AKfycbz7JQ6SCriD7oc7nowq_pAsn7vHRssY8no9W9u_SGaL6bALhw1do0vizr0zJo0haA7QFQ`) tracking solar installation milestones (Site Visit, Engineering, CEB/LECO Net Metering Approvals, Equipment Dispatch, Commissioning) and document checkpoints.
+    * `task-board.html` (`/task-board`, `/tasks`): Embeds **Task Board V2** (`AKfycbwicwsh1fax42QGn-W1mYEQ5oKOUeFYfBo07Q1vRjVPpIQB7RN84b_VLau-5cHr8uIZZA`) providing interactive Kanban task workflows, customer complaints logging & escalation desk, scheduling calendar, and interactive whiteboard, with a Prod/Dev switcher.
+  * Standardized and synchronized Desktop Left Navigation Rail across all portal pages (`admin.html`, `ops.html`, `po.html`, `users.html`, `accounting.html`, `management.html`, `task-board.html`) featuring quick navigation icons for all 7 primary departments.
+  * Synchronized Mobile Bottom Navigation across all portal pages with 6 core touch destinations (`Home`, `Accounts`, `Mgmt`, `Tasks`, `Ops`, `POs`).
+  * Wired all Operational System Links in `ops.html` to direct to the live embedded views (`Task Board`, `IFIX Accounting`, `IFIX Management`, `HR Missed Punch`, `Vacancy Sheet`).
+  * Updated local dev preview server (`scripts/dev_server.py`) and production deployment script (`deploy-final.sh`) to support routing and extensionless aliases (`/accounting`, `/management`, `/task-board`, `/tasks`).
+  * Maintained strict separation and exclusion of Drone Operations from this workspace.
 * **IFIX Admin Portal Complete Overhaul & Route Resolution (`admin.ifixgreensolutions.lk`):**
   * Built complete, standalone responsive frosted glassmorphism views under `social-dashboard/`:
     * `admin.html`: Main admin hub layout with real-time Colombo clock, interactive search, KPI metrics, project approval queue, HR pipeline ring chart, PO backlog, and quick links.
