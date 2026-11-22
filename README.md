@@ -170,6 +170,13 @@ All modifications, additions, and milestones are documented here in reverse chro
   * **Weekly Review**: Drone cleaning verification with 3 angle photos, vehicle cleaning verification with 2 interior + 3 exterior photos, and accident repair work assessment.
   * **Payout Gate**: "Collect Incentive" action on staff leaderboard strictly gated; blocked if any daily or weekly criteria scores `0`.
 
+### 2026-11-22
+* **Weekly figures:** 353 → **369 projects**, 4.8 → **5.0 MW**, **66 completed in 2026**. Profile rebuilt and the Drive file replaced in place.
+* **Pump row read correctly:** a Mannar pump typed `1500kW` is a 1,500 W submersible — the figures code now treats any value of 1000 kW or more as watts, so the total is 5.0 MW and not 6.5.
+* **Offers:** the storage graphic came out; two Black Friday cards went in — 6 kW off-grid **Rs 999,000** and 20 kW hybrid **Rs 2,399,000**, each with its inclusions and Call/WhatsApp.
+* **Build fix:** the render and PDF steps were silently failing because a global PYTHONPATH pointed at a broken Pillow; both now run on the venv interpreter with PYTHONPATH cleared.
+* Verified live: 369 / 5.0 / 66 on the counters and growth note, both prices present, storage graphic gone.
+
 ### 2026-11-15 (later)
 * **Project Documentation & Work Log Standard:**
   * Updated `README.md` with full infrastructure reference and comprehensive history.
