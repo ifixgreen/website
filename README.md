@@ -65,6 +65,15 @@ This website automatically builds and deploys using **GitHub Actions**:
 
 All modifications, additions, and milestones are documented here in reverse chronological order:
 
+### 2026-11-22
+* **Management Dashboard & Admin Portal Login/Loading Diagnostics + Frame Auth-Assist Update:**
+  * Diagnosed live loading/login blockers across the Management Dashboard and `admin.ifixgreensolutions.lk`:
+    * **Google Apps Script Access Setting (`access: "ANYONE"` vs `"ANYONE_ANONYMOUS"`)**: Confirmed that Management Dashboard (Prod & Dev), Accounting, and Task Board Apps Script manifests use `"access": "ANYONE"`, which enforces a Google Sign-In redirect (`302 → accounts.google.com/ServiceLogin`) with `X-Frame-Options: SAMEORIGIN` and `frame-ancestors 'self'`, preventing unauthenticated iframe loads/logins.
+    * **Live Server Deployment Gap (`admin.ifixgreensolutions.lk/management`)**: Verified via live inspection and `README — admin page (read before any change)` that `admin.ifixgreensolutions.lk` runs on the remote desk server (`/opt/data/workspace/dashboard-server.py`, port `8095`) behind `cloudflared-dashboard`, where `/management` returns HTTP `404` until deployed via the `ifix-desk` MCP bridge and registered in `dashboard-server.py`.
+  * Updated `Weniton/admin page/social-dashboard/js/frame-view.js` and `social-dashboard/css/frame-view.css`:
+    * Added a 5-second fallback loader timeout so embedded GAS pages never hang indefinitely if Google blocks framing.
+    * Added a dismissible `.auth-bar` inside `.frame-container` with a live-synced **↗ Open / Sign In** button for the active `Prod` / `Dev` URL.
+
 ### 2026-11-21
 * **Management Dashboard Audit & Dual-Environment Controller Integration (`management.html`):**
   * Conducted an in-depth audit of the **Solar Project Management Dashboard** (`Sharon/Management dashboard`):
