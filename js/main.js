@@ -60,14 +60,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Animated KPI Counters
   function runCounter(el) {
-    var target = parseFloat(el.dataset.target), cur = 0, step = target / 60, isInt = Number.isInteger(target);
+    var raw = String(el.dataset.target);
+    var dec = raw.indexOf('.') > -1 ? 1 : 0;          // "5.0" must read 5.0, never 5
+    var target = parseFloat(raw), cur = 0, step = target / 60, isInt = dec === 0;
     var t = setInterval(function() {
       cur += step;
       if (cur >= target) {
         cur = target;
         clearInterval(t);
       }
-      el.textContent = (isInt ? Math.floor(cur) : (Math.round(cur * 10) / 10)) + '+';
+      el.textContent = (isInt ? Math.floor(cur) : cur.toFixed(dec)) + '+';
     }, 22);
   }
   if ('IntersectionObserver' in window) {
