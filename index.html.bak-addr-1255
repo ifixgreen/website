@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="none">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iFix Green Solutions | Solar Energy Experts in Sri Lanka</title>
+  <meta name="description" content="SLSEA registered solar energy company in Sri Lanka. Design, installation &amp; maintenance of on-grid, off-grid &amp; hybrid solar systems since 2019.">
+  <meta name="tiktok-developers-site-verification" content="7oWz5OrxFJj6cmvjJ5QBuYZaugctuiZt">
+  <meta property="og:title" content="iFix Green Solutions - Solar Energy Experts">
+  <meta property="og:description" content="Sri Lanka's trusted solar energy partner. Designing, installing &amp; maintaining solar power systems since 2019.">
+  <meta property="og:image" content="https://ifixgreensolutions.lk/images/logo.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ifixgreensolutions.lk">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <script>document.documentElement.className='js';</script>
+  <style>
+    /* ═══════════════ THEME TOKENS ═══════════════
+       Palette sampled from photos/logo.png — monochrome, black on white:
+       near-black #0a0a0a · white #ffffff · canvas #fafafa · line #e4e4e4
+       Single accent carried over from the logo panel/wordmark: navy #0f3656, used sparingly.
+    ═══════════════════════════════════════════ */
+    :root{
+      --ink-900:#0a0a0a; --ink-800:#151515; --ink-700:#1f1f1f; --ink-600:#2e2e2e; --ink-500:#4a4a4a;
+      --ink-050:#f4f4f4; --ink-100:#e6e6e6;
+      --accent:#0f3656; --accent-dark:#0b2840; --accent-050:#eef2f6; --accent-100:#dbe3ea;
+      --ink:#0a0a0a; --body:#3c3c3c; --muted:#757575;
+      --line:#e4e4e4; --bg:#fafafa; --card:#ffffff;
+      --radius:20px; --radius-sm:14px;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.04);
+      --shadow-md:0 12px 28px -12px rgba(0,0,0,.16), 0 2px 6px rgba(0,0,0,.05);
+      --shadow-lg:0 26px 50px -22px rgba(0,0,0,.26);
+      --maxw:1200px;
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;scroll-padding-top:84px;-webkit-text-size-adjust:100%;}
+    body{
+      font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+      color:var(--body); background:var(--bg);
+      font-size:16px; line-height:1.65; overflow-x:hidden;
+    }
+    img{max-width:100%;display:block;}
+    a{color:inherit;text-decoration:none;}
+    ul{list-style:none;}
+    h1,h2,h3,h4{font-family:'Sora','Inter',sans-serif;color:var(--ink);line-height:1.2;letter-spacing:-.02em;}
+    .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+
+    /* ═══════════════ HEADER ═══════════════ */
+    .site-header{
+      position:sticky;top:0;z-index:120;
+      background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);transition:box-shadow .3s var(--ease),background .3s var(--ease);
+    }
+    .site-header.scrolled{box-shadow:0 8px 24px -18px rgba(0,0,0,.45);background:rgba(255,255,255,.95);}
+    .topbar{display:flex;align-items:center;gap:16px;min-height:92px;padding:12px 0;}
+    .brand{display:flex;align-items:center;gap:10px;flex:0 0 auto;}
+    .brand img{height:74px;width:auto;transition:transform .3s var(--ease);}
+    .brand:hover img{transform:scale(1.04);}
+    .nav{margin-left:auto;display:none;align-items:center;gap:26px;}
+    .nav a{font-size:.9rem;font-weight:500;color:var(--body);position:relative;padding:4px 0;transition:color .25s var(--ease);}
+    .nav a::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:0;border-radius:2px;background:var(--ink-600);transition:width .3s var(--ease);}
+    .nav a:hover,.nav a.active{color:var(--ink-700);}
+    .nav a:hover::after,.nav a.active::after{width:100%;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      font-family:'Sora',sans-serif;font-weight:600;font-size:.94rem;
+      padding:13px 24px;border-radius:999px;border:1px solid transparent;cursor:pointer;
+      transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease),color .25s var(--ease);
+    }
+    .btn-primary{background:#0a0a0a;color:#fff;border-color:#0a0a0a;box-shadow:var(--shadow-sm);}
+    .btn-primary:hover{background:#2b2b2b;border-color:#2b2b2b;transform:translateY(-2px);box-shadow:0 14px 26px -14px rgba(0,0,0,.6);}
+    .btn-amber{background:#ffffff;color:var(--ink-900);border-color:#ffffff;}
+    .btn-amber:hover{background:#ededed;border-color:#ededed;transform:translateY(-2px);box-shadow:0 14px 26px -14px rgba(0,0,0,.45);}
+    .btn-ghost{background:rgba(255,255,255,.10);color:#fff;border-color:rgba(255,255,255,.42);}
+    .btn-ghost:hover{background:rgba(255,255,255,.2);transform:translateY(-2px);}
+    .header-cta{display:none;}
+    .burger{
+      margin-left:auto;width:44px;height:44px;border:1px solid var(--line);background:#fff;border-radius:12px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;
+    }
+    .burger span{display:block;width:20px;height:2px;border-radius:2px;background:var(--ink-700);transition:transform .3s var(--ease),opacity .3s var(--ease);}
+    .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .burger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-nav{
+      display:none;flex-direction:column;gap:2px;
+      border-top:1px solid var(--line);background:#fff;padding:10px 0 18px;
+    }
+    .mobile-nav.open{display:flex;}
+    .mobile-nav a{padding:13px 4px;font-weight:500;color:var(--ink);border-bottom:1px solid var(--line);}
+    .mobile-nav a:last-child{border-bottom:0;}
+    .mobile-nav .btn{margin-top:12px;}
+    @media (min-width:940px){
+      .nav{display:flex;}
+      .header-cta{display:inline-flex;}
+      .burger{display:none;}
+      .mobile-nav{display:none !important;}
+    }
+
+    /* ═══════════════ HERO ═══════════════ */
+    .hero{position:relative;isolation:isolate;overflow:hidden;background:var(--ink-900);color:#f5f5f5;}
+    .hero::before{
+      content:'';position:absolute;inset:0;z-index:-2;
+      background:url('photos/rooftop-array-wide.jpg') center/cover no-repeat;
+      opacity:.5;
+    }
+    .hero::after{
+      content:'';position:absolute;inset:0;z-index:-1;
+      background:
+        radial-gradient(900px 420px at 82% 8%, rgba(255,255,255,.12), transparent 62%),
+        linear-gradient(160deg, rgba(0,0,0,.90) 0%, rgba(0,0,0,.72) 50%, rgba(0,0,0,.94) 100%);
+    }
+    .hero-inner{padding:64px 0 72px;text-align:left;}
+    .hero-logo{height:118px;width:auto;margin:0 0 20px;display:block;background:#fff;padding:10px 14px;
+      border-radius:16px;box-shadow:0 14px 34px -14px rgba(0,0,0,.65);}
+    .contact-logo{display:flex;justify-content:center;padding-top:8px;margin-bottom:-8px;}
+    .contact-logo img{height:104px;width:auto;}
+    .badge{
+      display:inline-flex;align-items:center;gap:9px;padding:8px 16px;border-radius:999px;
+      background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.24);
+      font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#e2e2e2;
+    }
+    .badge .dot{width:8px;height:8px;border-radius:50%;background:#ffffff;box-shadow:0 0 0 4px rgba(255,255,255,.22);}
+    .hero h1{
+      color:#fff;font-size:clamp(2.05rem,7.2vw,4.05rem);font-weight:800;
+      margin:22px 0 18px;max-width:15ch;
+    }
+    .hero h1 em{font-style:normal;color:#ffffff;border-bottom:4px solid rgba(255,255,255,.45);}
+    .hero p{color:#d6d6d6;max-width:56ch;font-size:1.02rem;}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px;}
+    .hero-cta .btn{flex:1 1 auto;min-width:180px;}
+    .stats{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:40px;
+    }
+    .stat{
+      background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);
+      border-radius:var(--radius-sm);padding:16px 18px;backdrop-filter:blur(4px);
+    }
+    .stat b{display:block;font-family:'Sora',sans-serif;font-weight:700;font-size:1.7rem;color:#fff;letter-spacing:-.02em;}
+    .stat span{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:#b0b0b0;}
+    @media (min-width:760px){
+      .hero-inner{padding:96px 0 104px;}
+      .stats{grid-template-columns:repeat(4,1fr);margin-top:52px;}
+      .hero::before{opacity:.38;}
+      .hero-cta .btn{flex:0 0 auto;min-width:0;}
+    }
+
+    /* ═══════════════ TRUST STRIP ═══════════════ */
+    .trust{background:#fff;border-bottom:1px solid var(--line);}
+    .trust-in{display:flex;flex-wrap:wrap;gap:10px;padding:16px 0;}
+    .trust-item{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--ink-050);border:1px solid var(--ink-100);color:var(--ink-800);
+      border-radius:999px;padding:8px 14px;font-size:.76rem;font-weight:500;letter-spacing:.02em;
+    }
+    .trust-item b{font-weight:700;}
+    .trust-item i{font-style:normal;font-size:.85rem;}
+
+    /* ═══════════════ SECTIONS ═══════════════ */
+    section{padding:64px 0;}
+    .section-alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+    .head{max-width:660px;margin-bottom:38px;}
+    .head.center{margin-left:auto;margin-right:auto;text-align:center;}
+    .eyebrow{
+      display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+      color:#0a0a0a;background:#f4f4f4;border:1px solid #e6e6e6;
+      padding:6px 13px;border-radius:999px;margin-bottom:16px;
+    }
+    .head h2{font-size:clamp(1.65rem,4.6vw,2.5rem);font-weight:700;margin-bottom:12px;}
+    .head p{color:var(--body);}
+    @media (min-width:760px){ section{padding:88px 0;} .head{margin-bottom:48px;} }
+    @media (min-width:1200px){
+      section{padding:104px 0;}
+      .wrap{padding:0 28px;}
+      .head{margin-bottom:56px;}
+      .grid{gap:24px;}
+      .hero-inner{padding:118px 0 126px;}
+      .card-body{padding:24px;}
+    }
+
+    /* ═══════════════ ABOUT ═══════════════ */
+    .about-grid{display:grid;gap:32px;}
+    .about-media{position:relative;}
+    .about-media .main{
+      width:100%;aspect-ratio:16/11;object-fit:cover;border-radius:var(--radius);
+      box-shadow:var(--shadow-md);
+    }
+    .about-media .inset{
+      display:none;
+    }
+    .pillars{display:grid;grid-template-columns:1fr;gap:12px;margin-top:16px;}
+    .pillar{
+      display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius-sm);padding:14px 16px;box-shadow:var(--shadow-sm);
+    }
+    .pillar i{
+      flex:0 0 auto;width:30px;height:30px;border-radius:9px;background:var(--ink-050);color:var(--ink-700);
+      display:flex;align-items:center;justify-content:center;font-size:.85rem;
+    }
+    .pillar p{font-size:.87rem;line-height:1.5;color:var(--body);}
+    .mission{
+      background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;
+      box-shadow:var(--shadow-md);position:relative;overflow:hidden;
+    }
+    .mission::before{content:'';position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,#0a0a0a,var(--accent));}
+    .mission h3{font-size:1.16rem;margin:14px 0 10px;}
+    .mission .sun{font-size:2rem;line-height:1;display:inline-block;}
+    .mission > p{font-size:.92rem;color:var(--body);}
+    .tick-list{margin-top:16px;display:grid;gap:9px;}
+    .tick-list li{display:flex;gap:10px;align-items:center;font-size:.9rem;color:var(--ink);}
+    .tick-list li::before{
+      content:'⚡';font-size:.7rem;width:22px;height:22px;border-radius:7px;background:var(--ink-050);
+      display:flex;align-items:center;justify-content:center;flex:0 0 auto;
+    }
+    .about-copy h3{font-size:clamp(1.4rem,4vw,1.95rem);margin-bottom:16px;}
+    .about-copy p{margin-bottom:14px;}
+    .about-copy strong{color:var(--ink-700);}
+    .about-flag{
+      display:inline-flex;align-items:center;gap:9px;margin-top:8px;
+      background:var(--ink-050);border:1px solid var(--ink-100);color:var(--ink-800);
+      border-radius:12px;padding:10px 14px;font-size:.85rem;font-weight:600;
+    }
+    @media (min-width:880px){
+      .about-grid{grid-template-columns:1.05fr .95fr;gap:56px;align-items:start;}
+      .about-media .inset{
+        display:block;position:absolute;right:-16px;bottom:-28px;width:46%;aspect-ratio:4/5;object-fit:cover;
+        border-radius:var(--radius-sm);border:6px solid #fff;box-shadow:var(--shadow-lg);
+      }
+      .pillars{grid-template-columns:1fr 1fr;}
+    }
+
+    /* ═══════════════ CARD GRIDS ═══════════════ */
+    .grid{display:grid;gap:20px;}
+    .card{
+      background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+      box-shadow:var(--shadow-sm);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s var(--ease);
+      display:flex;flex-direction:column;
+    }
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md);border-color:var(--ink-100);}
+    .card-photo{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--ink-050);}
+    .card-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+    .card:hover .card-photo img{transform:scale(1.06);}
+    .card-body{padding:20px;display:flex;flex-direction:column;gap:8px;flex:1;}
+    .card-body h3{font-size:1.05rem;}
+    .card-body p{font-size:.9rem;}
+    .tag{
+      position:absolute;top:12px;left:12px;z-index:2;
+      background:rgba(0,0,0,.82);color:#fff;border:1px solid rgba(255,255,255,.22);
+      font-size:.66rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+      padding:6px 11px;border-radius:999px;backdrop-filter:blur(6px);
+    }
+    .num{
+      position:absolute;top:12px;left:12px;z-index:2;width:38px;height:38px;border-radius:12px;
+      background:#0a0a0a;color:#ffffff;font-family:'Sora',sans-serif;font-weight:700;font-size:.9rem;
+      display:flex;align-items:center;justify-content:center;box-shadow:0 6px 14px -6px rgba(0,0,0,.35);
+    }
+    .meta{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px;font-size:.76rem;color:var(--ink-700);font-weight:500;}
+    .meta span{display:inline-flex;align-items:center;gap:5px;}
+    @media (min-width:620px){ .grid.cols-2{grid-template-columns:repeat(2,1fr);} .grid.cols-3{grid-template-columns:repeat(2,1fr);} }
+    @media (min-width:980px){ .grid.cols-3{grid-template-columns:repeat(3,1fr);} .grid.cols-4{grid-template-columns:repeat(4,1fr);} }
+
+    /* ═══════════════ PRODUCTS ═══════════════ */
+    .prod .card-photo{aspect-ratio:4/3;}
+    .prod-brand{font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-dark);}
+    .specs{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:12px;}
+    .spec{
+      background:var(--ink-050);border:1px solid var(--ink-100);color:var(--ink-800);
+      font-size:.72rem;font-weight:600;padding:5px 11px;border-radius:999px;
+    }
+
+    /* ═══════════════ TIMELINE / ROADMAP ═══════════════ */
+    .timeline{position:relative;display:grid;gap:18px;padding-left:26px;}
+    .timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#d4d4d4,#0a0a0a);border-radius:2px;}
+    .tl-item{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:20px;box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),box-shadow .3s var(--ease);}
+    .tl-item:hover{transform:translateX(3px);box-shadow:var(--shadow-md);}
+    .tl-item::before{content:'';position:absolute;left:-26px;top:26px;width:16px;height:16px;border-radius:50%;background:#fff;border:3px solid var(--ink-600);}
+    .tl-item.now{border-color:#d9d9d9;background:linear-gradient(180deg,#ffffff,#f4f4f4);}
+    .tl-item.now::before{border-color:#0a0a0a;}
+    .tl-flag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-700);background:var(--ink-050);border-radius:999px;padding:5px 11px;margin-bottom:10px;}
+    .tl-item.now .tl-flag{color:var(--accent-dark);background:var(--accent-050);}
+    .tl-year{display:block;font-family:'Sora',sans-serif;font-weight:800;font-size:1.5rem;color:var(--ink-800);margin-bottom:6px;}
+    .tl-item h4{font-size:1rem;margin-bottom:8px;}
+    .tl-item p{font-size:.88rem;}
+    @media (min-width:900px){ .timeline{grid-template-columns:repeat(2,1fr);padding-left:26px;} .tl-item::before{left:-25px;} }
+
+    /* ═══════════════ CHART ═══════════════ */
+    .chart-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px 18px 20px;box-shadow:var(--shadow-md);}
+    .chart{display:flex;align-items:flex-end;gap:10px;height:240px;}
+    .bar{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:0;}
+    .bar-fill{
+      width:100%;max-width:46px;border-radius:10px 10px 4px 4px;
+      background:linear-gradient(180deg,var(--ink-600),var(--ink-700));
+      min-height:6px;position:relative;transition:height .9s var(--ease),filter .3s var(--ease);
+      box-shadow:inset 0 -1px 0 rgba(0,0,0,.06);
+    }
+    .bar:hover .bar-fill{filter:brightness(1.06);}
+    .bar:last-child .bar-fill{background:linear-gradient(180deg,#1d5885,var(--accent-dark));}
+    .bar-label{margin-top:10px;font-size:.74rem;font-weight:600;color:var(--muted);font-family:'Sora',sans-serif;}
+    .bar:last-child .bar-label{color:var(--accent-dark);}
+    .chart-note{margin-top:22px;font-size:.88rem;color:var(--body);text-align:center;max-width:70ch;margin-left:auto;margin-right:auto;}
+    @media (min-width:760px){ .chart{height:300px;gap:18px;} .bar-fill{max-width:64px;} .bar-label{font-size:.82rem;} }
+
+    /* ═══════════════ BRAND STRIP CARDS ═══════════════ */
+    .brand-card{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;box-shadow:var(--shadow-sm);}
+    .brand-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s var(--ease);}
+    .brand-card:hover img{transform:scale(1.06);}
+    .brand-card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.82));}
+    .brand-card h4{
+      position:absolute;left:14px;bottom:14px;z-index:2;color:#fff;font-size:.95rem;
+      background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.24);
+      padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px);
+    }
+
+    /* ═══════════════ COVERAGE ═══════════════ */
+    .chips{display:grid;gap:12px;}
+    .chip{
+      display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius-sm);padding:15px 17px;font-size:.88rem;font-weight:500;color:var(--ink);
+      box-shadow:var(--shadow-sm);transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease);
+    }
+    .chip:hover{transform:translateY(-3px);border-color:var(--ink-100);box-shadow:var(--shadow-md);}
+    .chip.plain{background:var(--ink-050);border-color:var(--ink-100);color:var(--ink-800);justify-content:center;}
+    @media (min-width:760px){ .chips{grid-template-columns:repeat(2,1fr);} }
+
+    /* ═══════════════ CONTACT ═══════════════ */
+    .contact-grid{display:grid;gap:28px;}
+    .contact-list{display:grid;gap:14px;}
+    .c-item{display:flex;gap:14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius-sm);padding:16px;box-shadow:var(--shadow-sm);}
+    .c-ico{
+      flex:0 0 auto;width:42px;height:42px;border-radius:12px;background:var(--ink-050);color:var(--ink-700);
+      display:flex;align-items:center;justify-content:center;font-size:1.05rem;
+    }
+    .c-item h4{font-size:.92rem;margin-bottom:3px;}
+    .c-item p{font-size:.88rem;}
+    .c-item a{color:var(--ink-700);font-weight:600;}
+    .c-item a:hover{color:var(--ink-600);}
+    .socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
+    .soc{
+      width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);
+      display:flex;align-items:center;justify-content:center;transition:transform .3s var(--ease),background .3s var(--ease),border-color .3s var(--ease);
+      box-shadow:var(--shadow-sm);
+    }
+    .soc svg{width:20px;height:20px;fill:var(--ink-700);transition:fill .3s var(--ease);}
+    .soc:hover{transform:translateY(-3px);background:var(--ink-050);border-color:var(--ink-100);}
+    .soc:hover svg{fill:var(--ink-600);}
+    .form-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-md);}
+    .field{margin-bottom:15px;}
+    .field label{display:block;font-size:.76rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+    .field input,.field textarea{
+      width:100%;padding:13px 15px;font-family:inherit;font-size:.94rem;color:var(--ink);
+      background:var(--bg);border:1px solid var(--line);border-radius:12px;outline:none;
+      transition:border-color .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease);
+    }
+    .field input:focus,.field textarea:focus{background:#fff;border-color:#0a0a0a;box-shadow:0 0 0 4px rgba(10,10,10,.10);}
+    .field textarea{min-height:118px;resize:vertical;}
+    .form-card .btn{width:100%;}
+    .form-hint{margin-top:12px;font-size:.78rem;color:var(--muted);text-align:center;}
+    @media (min-width:900px){ .contact-grid{grid-template-columns:1fr 1.05fr;gap:44px;} .contact-list{grid-template-columns:1fr;} }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer{background:var(--ink-900);color:#c9c9c9;padding:52px 0 30px;text-align:center;}
+    @media (max-width:759px){ footer{padding-bottom:104px;} }
+    footer .f-logo{height:84px;margin:0 auto 18px;}
+    .f-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 22px;margin:14px 0;}
+    .f-links a{font-size:.85rem;color:#c9c9c9;padding:11px 4px;transition:color .25s var(--ease);}
+    .f-links a:hover{color:#ffffff;}
+    .f-social{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin:20px 0 22px;}
+    .f-social .soc{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);}
+    .f-social .soc svg{fill:#e8e8e8;}
+    .f-social .soc:hover{background:rgba(255,255,255,.16);}
+    .f-copy{font-size:.8rem;color:#a0a0a0;border-top:1px solid rgba(255,255,255,.12);padding-top:20px;}
+
+    /* ═══════════════ FLOATING BUTTONS ═══════════════ */
+    .wa{
+      position:fixed;right:16px;bottom:16px;z-index:200;width:56px;height:56px;border-radius:50%;
+      background:#0a0a0a;border:1px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;
+      box-shadow:0 14px 30px -10px rgba(0,0,0,.55);transition:transform .3s var(--ease);
+    }
+    .wa svg{width:30px;height:30px;fill:#fff;}
+    .wa:hover{transform:scale(1.08) translateY(-2px);}
+    .wa::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid rgba(10,10,10,.5);animation:waPulse 2.4s ease-out infinite;}
+    @keyframes waPulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.65);opacity:0}}
+    .to-top{
+      position:fixed;right:16px;bottom:82px;z-index:200;width:46px;height:46px;border-radius:50%;cursor:pointer;
+      background:#0a0a0a;color:#ffffff;border:none;font-size:1.1rem;font-weight:700;
+      display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);
+      opacity:0;visibility:hidden;transform:translateY(14px);transition:all .35s var(--ease);
+    }
+    .to-top.show{opacity:1;visibility:visible;transform:translateY(0);}
+    @media (min-width:760px){ .wa{right:24px;bottom:24px;} .to-top{right:29px;bottom:92px;} }
+
+    /* ═══════════════ MOTION ═══════════════ */
+    html.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+    html.js .reveal.in{opacity:1;transform:none;}
+    @media (prefers-reduced-motion:reduce){
+      html.js .reveal{opacity:1;transform:none;transition:none;}
+      *{animation-duration:.001s !important;transition-duration:.001s !important;}
+    }
+    :focus-visible{outline:3px solid rgba(15,54,86,.55);outline-offset:2px;border-radius:6px;}
+  /* ── festival theme (switch with <html data-theme="…">) ── */
+  :root{--fest-bg:#7a3a00;--fest-ink:#fff5e6;--fest-accent:#f6a623;}
+  html[data-theme="ayudha"]{--fest-bg:#7a3a00;--fest-ink:#fff5e6;--fest-accent:#f6a623;}
+  html[data-theme="deepavali"]{--fest-bg:#4a1a2c;--fest-ink:#fff0f4;--fest-accent:#f2b632;}
+  html[data-theme="christmas"]{--fest-bg:#0d3b23;--fest-ink:#f2fbf5;--fest-accent:#e0493c;}
+  html[data-theme="pongal"]{--fest-bg:#5a3b00;--fest-ink:#fff8e1;--fest-accent:#ffcc33;}
+  html[data-theme="newyear"]{--fest-bg:#2a1030;--fest-ink:#fdf3ff;--fest-accent:#ffb020;}
+  html[data-theme="none"] .festival-bar{display:none;}
+  .festival-bar{position:relative;z-index:60;background:var(--fest-bg);color:var(--fest-ink);
+    font-size:13.5px;letter-spacing:.2px;text-align:center;padding:9px 18px;line-height:1.45;}
+  .festival-bar b{color:var(--fest-accent);}
+  .festival-bar a{color:var(--fest-ink);text-decoration:underline;text-underline-offset:2px;}
+  html[data-theme="ayudha"] .offers-band{background:linear-gradient(180deg,#fff3e0 0%,#ffffff 78%);}
+  html[data-theme="ayudha"] .offer-ribbon{background:var(--fest-accent);color:#40260a;}
+  html[data-theme="ayudha"] .hero::before{background-image:url('images/theme/ayudha-hero.jpg');background-position:center 62%;opacity:1;}
+  html[data-theme="ayudha"] .hero::after{background:linear-gradient(100deg,rgba(4,4,6,.92) 0%,rgba(4,4,6,.55) 42%,rgba(4,4,6,0) 100%),linear-gradient(0deg,rgba(4,4,6,.72) 0%,rgba(4,4,6,0) 26%);}
+  html[data-theme="deepavali"] .offers-band{background:linear-gradient(180deg,#fdf1f5 0%,#ffffff 78%);}
+  html[data-theme="deepavali"] .offer-ribbon{background:var(--fest-accent);color:#3a1220;}
+  html[data-theme="deepavali"] .hero::before{background-image:url('images/theme/ayudha-hero.jpg');background-position:center 62%;opacity:.92;filter:hue-rotate(-24deg) saturate(1.15);}
+  html[data-theme="christmas"] .offers-band{background:linear-gradient(180deg,#f0fbf3 0%,#ffffff 78%);}
+  /* ── current offers ── */
+  .offers-band{background:linear-gradient(180deg,#fff6e9 0%,#ffffff 78%);}
+  .card.offer{position:relative;overflow:hidden;border:1px solid #f0d7ad;box-shadow:var(--shadow-md);}
+  /* single promotion block (2026-11-15) */
+  .promo-single{margin:34px auto 0;max-width:540px;border-radius:26px;overflow:hidden;
+    box-shadow:0 26px 60px rgba(6,18,31,.28);background:#0b1d2e;}
+  .promo-single img{display:block;width:100%;height:auto;}
+  .promo-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px;}
+  .promo-cta .btn-amber{background:#f08a24;color:#fff;border:1px solid #f08a24;font-weight:700;}
+  .promo-cta .btn-ghost{background:#ffffff;color:#0d2438;border:1px solid #c9d3dc;font-weight:700;}
+  .promo-cta .btn-ghost:hover{background:#f4f7fa;}
+  .offer-ribbon{display:inline-block;margin:16px 0 0 16px;background:#f08a24;color:#fff;border-radius:999px;
+    font-size:9.5px;font-weight:800;letter-spacing:.7px;padding:5px 11px;text-transform:uppercase;
+    white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.08);}
+  .card.offer .card-body{padding-top:14px;}
+  .card.offer .tag{position:static;display:inline-block;margin-bottom:10px;}
+  .offer-tag{background:#fdf0dc;color:#a35b00;border:1px solid #f3d9b4;}
+  .offer-cta .btn-ghost{border:1px solid #c9d3dc;background:#fff;color:var(--ink-900);font-weight:700;}
+  .price-row{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:12px 0 14px;}
+  .price{font-size:31px;font-weight:800;color:var(--ink-900);letter-spacing:-.4px;}
+  .was{text-decoration:line-through;color:#9a9a9a;font-size:15px;font-weight:500;}
+  .save{background:#e9f7ee;color:#1c7a3f;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;}
+  .offer-list{margin:0 0 14px;padding-left:18px;font-size:14.5px;line-height:1.65;color:var(--body);}
+  .offer-list li{margin-bottom:5px;}
+  .offer-benefit{font-size:13.5px;font-weight:700;color:#1c7a3f;margin:-4px 0 14px;}
+  .offer-cta{display:flex;gap:10px;flex-wrap:wrap;}
+  .offer-note{text-align:center;font-size:13px;color:var(--muted);margin-top:18px;}
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ FESTIVAL BAR (theme: data-theme on <html>) ═══════ -->
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="site-header" id="siteHeader">
+    <div class="wrap">
+      <div class="topbar">
+        <a href="#top" class="brand" aria-label="iFix Green Solutions home">
+          <img src="images/logo.png" alt="iFix Green Solutions">
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a href="#about">About</a>
+          <a href="#offers">Promotion</a>
+          <a href="#services">Services</a>
+          <a href="#products">Products</a>
+          <a href="#projects">Projects</a>
+          <a href="#roadmap">Journey</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="btn btn-primary header-cta">Get Quote</a>
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+        <a href="#about">About</a>
+        <a href="#offers">Promotion</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#projects">Projects</a>
+        <a href="#roadmap">Journey</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">Get Quote</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════ HERO ═══════ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <img class="hero-logo" src="images/logo.png" alt="iFix Green Solutions" width="150" height="150">
+      <span class="badge"><span class="dot"></span> SLSEA Registered &bull; Since 2019</span>
+      <h1>Powering <em>Sri Lanka</em><br>With Solar Energy</h1>
+      <p>We design, install &amp; maintain cutting-edge solar power systems — on-grid, off-grid &amp; hybrid — delivering sustainable energy solutions across the island.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-amber">Get Free Survey</a>
+        <a href="#projects" class="btn btn-ghost">View Projects</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b class="stat-num" data-target="353">0</b><span>Projects Completed</span></div>
+        <div class="stat"><b class="stat-num" data-target="7">0</b><span>Years Experience</span></div>
+        <div class="stat"><b class="stat-num" data-target="4.8">0</b><span>MW to Grid</span></div>
+        <div class="stat"><b class="stat-num" data-target="4">0</b><span>Regions</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ TRUST STRIP ═══════ -->
+  <div class="trust">
+    <div class="wrap trust-in">
+      <span class="trust-item"><i>✔</i> SLSEA Registered &bull; PV 00214433</span>
+      <span class="trust-item"><i>📅</i> Operating Since <b>2019</b></span>
+      <span class="trust-item"><i>🔆</i> Panels: <b>Jinko &bull; JA Solar</b></span>
+      <span class="trust-item"><i>⚡</i> Inverters: <b>Sunways</b></span>
+      <span class="trust-item"><i>🔋</i> Storage: <b>LiFePO4 Batteries</b></span>
+    </div>
+  </div>
+
+  <!-- ═══════ CURRENT PROMOTION ═══════ -->
+  <section id="offers" class="offers-band">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Storage at home</span>
+        <h2>Sun down. Lights on. Bill flat.</h2>
+        <p>Renewables are 62% of the country's installed capacity today and the target is 69% by 2029 — storage is the constraint, and a battery on your own roof is where it starts.</p>
+      </div>
+      <figure class="promo-single reveal">
+        <img src="images/offers/storage-home.jpg" alt="A family at home in the evening, lights on, with solar and battery storage on the roof" loading="lazy">
+      </figure>
+      <div class="promo-cta reveal">
+        <a class="btn btn-amber" href="tel:+94706511656">Call 070 65 11 656</a>
+        <a class="btn btn-ghost" href="https://wa.me/94706511656" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ABOUT ═══════ -->
+  <section id="about">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="about-media reveal">
+          <img class="main" src="images/web/web-01.jpg" alt="Ground-mounted solar array installed by iFix Green Solutions">
+          <img class="inset" src="images/web/web-02.jpg" alt="iFix Green Solutions installer working on a rooftop solar array">
+        </div>
+        <div class="about-copy reveal">
+          <div class="mission">
+            <span class="sun" aria-hidden="true">☀️</span>
+            <h3>Our Mission</h3>
+            <p>To provide the most compelling value in the solar energy industry — designing and building systems that maximize your savings and reduce your carbon footprint.</p>
+            <ul class="tick-list">
+              <li>SLSEA Registered Company</li>
+              <li>Certified Solar Technicians</li>
+              <li>End-to-End Project Management</li>
+              <li>24/7 After-Sales Support</li>
+              <li>Free Site Survey &amp; Consultation</li>
+            </ul>
+          </div>
+          <h3 style="margin-top:32px;">Sri Lanka's Trusted<br>Solar Energy Partner</h3>
+          <p>Since 2019, <strong>iFix Green Solutions (Pvt) Ltd</strong> has been at the forefront of Sri Lanka's renewable energy revolution. As a fully registered SLSEA solar service provider, we deliver premium solar installations across Mannar, Jaffna, Colombo, Batticaloa, Matale, Kilinochchi and Vavuniya.</p>
+          <p>With the Net Plus scheme in force, our systems are built <strong>off-grid on a hybrid inverter</strong> — solar and battery carry the load through the evening peak, and the grid is kept only as back-up.</p>
+          <p>From residential rooftop systems to large-scale commercial installations, we handle everything — system design, procurement of world-class components, professional installation, and lifetime maintenance support.</p>
+          <span class="about-flag">🏢 SLSEA PV 00214433 &bull; Since 2019</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SERVICES ═══════ -->
+  <section id="services" class="section-alt">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">What We Do</span>
+        <h2>Our Services</h2>
+        <p>Comprehensive solar energy solutions from design to lifetime maintenance.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-03.jpg" alt="Solar installation"></div>
+          <div class="card-body">
+            <h3>Solar Installation</h3>
+            <p>Professional design and installation of on-grid, off-grid &amp; hybrid solar power systems for residential and commercial properties.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-04.jpg" alt="Maintenance and servicing"></div>
+          <div class="card-body">
+            <h3>Maintenance &amp; Servicing</h3>
+            <p>Regular system check-ups, panel cleaning, wiring inspection, inverter diagnostics, and component replacement for peak performance.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-05.jpg" alt="System design and consultation"></div>
+          <div class="card-body">
+            <h3>System Design &amp; Consultation</h3>
+            <p>Free site surveys and custom system designs tailored to your energy needs. We calculate optimal panel placement and system capacity.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-06.jpg" alt="Electrical and security"></div>
+          <div class="card-body">
+            <h3>Electrical &amp; Security</h3>
+            <p>Complete electrical wiring solutions and CCTV security camera installation services for homes and businesses.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-07.jpg" alt="Battery storage"></div>
+          <div class="card-body">
+            <h3>Battery Storage</h3>
+            <p>Advanced LiFePO4 battery storage systems for energy independence. Store solar power for use during nighttime and outages.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-08.jpg" alt="Energy monitoring"></div>
+          <div class="card-body">
+            <h3>Energy Monitoring</h3>
+            <p>Smart monitoring solutions to track your solar system's performance, energy production, and savings in real-time.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PRODUCTS ═══════ -->
+  <section id="products">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Premium Components</span>
+        <h2>Our Products</h2>
+        <p>We use only world-class components from trusted manufacturers for maximum efficiency and longevity.</p>
+      </div>
+      <div class="grid cols-3">
+        <article class="card prod reveal">
+          <div class="card-photo"><img src="images/web/web-09.jpg" alt="Solar panels"></div>
+          <div class="card-body">
+            <span class="prod-brand">Jinko &bull; JA Solar</span>
+            <h3>N-Type Bifacial Solar Panels</h3>
+            <p>High-efficiency N-type bifacial panels that capture sunlight from both sides, delivering up to 30% more energy than conventional panels.</p>
+            <div class="specs"><span class="spec">N-Type</span><span class="spec">Bifacial</span><span class="spec">25yr Warranty</span></div>
+          </div>
+        </article>
+        <article class="card prod reveal">
+          <div class="card-photo"><img src="images/web/web-10.jpg" alt="Hybrid solar inverters"></div>
+          <div class="card-body">
+            <span class="prod-brand">Sunways</span>
+            <h3>Hybrid Solar Inverters</h3>
+            <p>Advanced hybrid inverters that seamlessly switch between solar, battery, and grid power for uninterrupted energy supply.</p>
+            <div class="specs"><span class="spec">Hybrid</span><span class="spec">MPPT</span><span class="spec">Wi-Fi</span></div>
+          </div>
+        </article>
+        <article class="card prod reveal">
+          <div class="card-photo"><img src="images/web/web-11.jpg" alt="Battery storage"></div>
+          <div class="card-body">
+            <span class="prod-brand">Faraday</span>
+            <h3>LiFePO4 Battery Storage</h3>
+            <p>Long-lasting lithium iron phosphate batteries with 6000+ cycle life. Safe, efficient, and built for Sri Lanka's climate.</p>
+            <div class="specs"><span class="spec">LiFePO4</span><span class="spec">6000+ Cycles</span><span class="spec">10yr Life</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ PROJECTS ═══════ -->
+  <section id="projects" class="section-alt">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Our Work</span>
+        <h2>Featured Projects</h2>
+        <p>A selection of our solar installations across Sri Lanka.</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Commercial</span><img src="images/web/web-40.jpg" alt="250kW commercial on-grid solar array in Mannar district"></div>
+          <div class="card-body">
+            <h3>250kW Commercial Solar Plant</h3>
+            <p>Our largest single installation — a 250 kW on-grid plant in Mannar district, engineered and commissioned for a commercial load.</p>
+            <div class="meta"><span>📍 Mannar District</span><span>⚡ 250kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Commercial</span><img src="images/web/web-43.jpg" alt="44kW on-grid rooftop solar system in Periyakarisal, Mannar"></div>
+          <div class="card-body">
+            <h3>44kW On-Grid Rooftop</h3>
+            <p>Rooftop array for a commercial building at Periyakarisal, Mannar — grid-tied and metered to the CEB.</p>
+            <div class="meta"><span>📍 Periyakarisal, Mannar</span><span>⚡ 44kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Institutional</span><img src="images/web/web-41.jpg" alt="3kW on-grid solar installation at District Agricultural Training Centre, Matale"></div>
+          <div class="card-body">
+            <h3>3kW On-Grid — Training Centre</h3>
+            <p>Institutional rooftop for the District Agricultural Training Centre in Matale, carried on an elevated steel structure.</p>
+            <div class="meta"><span>📍 Matale</span><span>⚡ 3kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Residential</span><img src="images/web/web-42.jpg" alt="3.2kW on-grid rooftop solar array in Periyakulam, Kilinochchi"></div>
+          <div class="card-body">
+            <h3>3.2kW On-Grid Rooftop</h3>
+            <p>Rooftop system at Periyakulam, Kilinochchi with a SOLAX inverter, producing 400–450 CEB units a month. A second 3 kW system followed on the same property.</p>
+            <div class="meta"><span>📍 Kilinochchi</span><span>⚡ 3.2kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Residential</span><img src="images/web/web-12.jpg" alt="Residential rooftop solar installation in Mannar"></div>
+          <div class="card-body">
+            <h3>5kW Rooftop On-Grid System</h3>
+            <p>Complete on-grid solar system installation for residential home, reducing monthly electricity bill by 90%.</p>
+            <div class="meta"><span>📍 Mannar</span><span>⚡ 5kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Commercial</span><img src="images/web/web-13.jpg" alt="Commercial solar installation in Colombo"></div>
+          <div class="card-body">
+            <h3>20kW Commercial Solar System</h3>
+            <p>Large-scale commercial installation with bifacial panels, delivering significant cost savings for business operations.</p>
+            <div class="meta"><span>📍 Colombo</span><span>⚡ 20kW</span><span>📋 On-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Hybrid</span><img src="images/web/web-14.jpg" alt="Sunways hybrid solar inverter installation in Jaffna"></div>
+          <div class="card-body">
+            <h3>10kW Hybrid Solar + Battery</h3>
+            <p>Hybrid solar system with LiFePO4 battery backup for complete energy independence during power outages.</p>
+            <div class="meta"><span>📍 Jaffna</span><span>⚡ 10kW</span><span>📋 Hybrid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Off-Grid</span><img src="images/web/web-15.jpg" alt="Off-grid solar panel and communications unit in Batticaloa"></div>
+          <div class="card-body">
+            <h3>Off-Grid Island Installation</h3>
+            <p>Standalone solar system with battery storage for locations without access to the national power grid.</p>
+            <div class="meta"><span>📍 Batticaloa</span><span>⚡ 8kW</span><span>📋 Off-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Hybrid</span><img src="images/web/web-28.jpg" alt="10kW ground-mounted hybrid solar array installed in Arugam Bay, Batticaloa"></div>
+          <div class="card-body">
+            <h3>10kW Hybrid Solar System</h3>
+            <p>Ground-mounted hybrid array with battery storage for a commercial property in Arugam Bay, installed for Ali Russell Amenti (Pvt) Ltd — completed 29 September 2026.</p>
+            <div class="meta"><span>📍 Arugam Bay, Batticaloa</span><span>⚡ 10kW</span><span>📋 Hybrid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Off-Grid</span><img src="images/web/web-29.jpg" alt="6kW off-grid rooftop solar array with inverter in Eluthoor, Mannar"></div>
+          <div class="card-body">
+            <h3>6kW Off-Grid Solar System</h3>
+            <p>Rooftop off-grid system with inverter and panel board for a site away from the national grid in Eluthoor, Mannar — completed 22 September 2026.</p>
+            <div class="meta"><span>📍 Eluthoor, Mannar</span><span>⚡ 6kW</span><span>📋 Off-Grid</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Pump</span><img src="images/web/web-30.jpg" alt="400W solar surface pump installation at Thurukkicity, Mannar"></div>
+          <div class="card-body">
+            <h3>400W Solar Surface Pump</h3>
+            <p>Solar surface pump for irrigation at Thurukkicity, Mannar (Jeyakumar) — completed 22 September 2026.</p>
+            <div class="meta"><span>📍 Thurukkicity, Mannar</span><span>⚡ 400W</span><span>📋 Pump System</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Pump</span><img src="images/web/web-31.jpg" alt="1.5kW solar pump system serving paddy land at Palikulam, Mannar"></div>
+          <div class="card-body">
+            <h3>1.5kW Solar Pump System</h3>
+            <p>Solar pump installation serving paddy land at Palikulam, Manthai East for N. Nilojan — completed 12 September 2026.</p>
+            <div class="meta"><span>📍 Palikulam, Mannar</span><span>⚡ 1.5kW</span><span>📋 Pump</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Pump</span><img src="images/web/web-32.jpg" alt="1.5kW solar pump system installed at Uyilankulam, Mannar"></div>
+          <div class="card-body">
+            <h3>1.5kW Solar Pump System</h3>
+            <p>Solar pump system installed for Caring Fathers at Uyilankulam, Mannar — completed 12 September 2026.</p>
+            <div class="meta"><span>📍 Uyilankulam, Mannar</span><span>⚡ 1.5kW</span><span>📋 Pump</span></div>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="tag">Pump</span><img src="images/web/web-33.jpg" alt="750W DC submersible solar pump running the Army Farm at Kurumpasiddy, Jaffna"></div>
+          <div class="card-body">
+            <h3>750W DC Submersible Pump</h3>
+            <p>DC submersible pump with solar array running the Army Farm at Kurumpasiddy, Jaffna — completed 4 September 2026.</p>
+            <div class="meta"><span>📍 Kurumpasiddy, Jaffna</span><span>⚡ 750W</span><span>📋 Pump System</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ HOW SOLAR WORKS ═══════ -->
+  <section id="how-works">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">The Process</span>
+        <h2>How Solar Energy Works</h2>
+        <p>From sunlight to powering your home — a simple, efficient four-step process.</p>
+      </div>
+      <div class="grid cols-2">
+        <article class="card reveal">
+          <div class="card-photo"><span class="num">01</span><img src="images/web/web-16.jpg" alt="Solar energy capture"></div>
+          <div class="card-body">
+            <h3>Solar Energy Capture</h3>
+            <p>Photovoltaic panels capture sunlight and convert it into direct current (DC) electricity, ensuring optimal absorption.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="num">02</span><img src="images/web/web-17.jpg" alt="DC to AC conversion"></div>
+          <div class="card-body">
+            <h3>DC to AC Conversion</h3>
+            <p>Inverters transform direct current into alternating current for household and business use, ensuring efficient power conversion.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="num">03</span><img src="images/web/web-18.jpg" alt="Powering appliances"></div>
+          <div class="card-body">
+            <h3>Powering Appliances</h3>
+            <p>Converted electricity powers appliances, lighting, and equipment, reducing dependency on the main grid.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><span class="num">04</span><img src="images/web/web-19.jpg" alt="Energy storage and grid"></div>
+          <div class="card-body">
+            <h3>Energy Storage &amp; Grid</h3>
+            <p>Excess energy is stored in batteries or fed into the grid, ensuring uninterrupted power supply and sustainability.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ ROADMAP ═══════ -->
+  <section id="roadmap" class="section-alt">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Our Journey</span>
+        <h2>Our Business Roadmap</h2>
+        <p>Company establishment and projects completed over the years.</p>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <span class="tl-flag">Established</span>
+          <span class="tl-year">2019</span>
+          <h4>Company Registration</h4>
+          <p>Registered under SLSEA on 08.08.2019. Launched with a mission to provide sustainable and affordable solar solutions islandwide.</p>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-flag">Milestone</span>
+          <span class="tl-year">2022</span>
+          <h4>353 Projects Completed</h4>
+          <p>Completed 92 projects islandwide, contributing 1.5 MW totally to the grid.</p>
+        </div>
+        <div class="tl-item now reveal">
+          <span class="tl-flag">Today</span>
+          <span class="tl-year">2026</span>
+          <h4>353 Projects Completed</h4>
+          <p>Completed 353 projects islandwide connected to grid, contributing 4.8 MW totally to the grid. Established branches in Jaffna, Colombo, Batticaloa, and Mannar.</p>
+        </div>
+        <div class="tl-item reveal">
+          <span class="tl-flag">Vision</span>
+          <span class="tl-year">2028</span>
+          <h4>Carbon Neutral</h4>
+          <p>Achieving complete carbon-neutral operations globally, ensuring long-term environmental stability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ GROWTH ═══════ -->
+  <section id="growth">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Our Growth</span>
+        <h2>Projects Over The Years</h2>
+      </div>
+      <div class="chart-card reveal">
+        <div class="chart" id="growthChart">
+          <div class="bar" data-year="2020"><div class="bar-fill" data-h="18" style="height:18%"></div><span class="bar-label">2020</span></div>
+          <div class="bar" data-year="2021"><div class="bar-fill" data-h="40" style="height:40%"></div><span class="bar-label">2021</span></div>
+          <div class="bar" data-year="2022"><div class="bar-fill" data-h="82" style="height:82%"></div><span class="bar-label">2022</span></div>
+          <div class="bar" data-year="2023"><div class="bar-fill" data-h="90" style="height:90%"></div><span class="bar-label">2023</span></div>
+          <div class="bar" data-year="2024"><div class="bar-fill" data-h="95" style="height:95%"></div><span class="bar-label">2024</span></div>
+          <div class="bar" data-year="2025"><div class="bar-fill" data-h="100" style="height:100%"></div><span class="bar-label">2025</span></div>
+          <div class="bar" data-year="2026"><div class="bar-fill" data-h="58" style="height:58%"></div><span class="bar-label">2026</span></div>
+        </div>
+        <p class="chart-note">From 45 residential &amp; commercial projects in 2021 to 353 completed projects with 4.8 MW to the grid in 2026 — 63 completed so far this year, steady growth through innovation and customer-focused solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ BRANDS ═══════ -->
+  <section id="brands" class="section-alt">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Our Partners</span>
+        <h2>Collaborating Brands</h2>
+        <p>We work with industry-leading brands to deliver high-quality solar solutions.</p>
+      </div>
+      <div class="grid cols-4">
+        <div class="brand-card reveal"><img src="images/web/web-20.jpg" alt="Panels"><h4>Panels</h4></div>
+        <div class="brand-card reveal"><img src="images/web/web-21.jpg" alt="Inverters"><h4>Inverters</h4></div>
+        <div class="brand-card reveal"><img src="images/web/web-22.jpg" alt="Batteries"><h4>Batteries</h4></div>
+        <div class="brand-card reveal"><img src="images/web/web-23.jpg" alt="Other Accessories"><h4>Other Accessories</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ WHY US ═══════ -->
+  <section id="why-us">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Why Choose Us</span>
+        <h2>The iFix Advantage</h2>
+      </div>
+      <div class="grid cols-4">
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-24.jpg" alt="SLSEA certified"></div>
+          <div class="card-body">
+            <h4 style="font-size:1rem;">SLSEA Certified</h4>
+            <p>Government registered and authorized for rooftop solar installations across Sri Lanka.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-25.jpg" alt="Best value"></div>
+          <div class="card-body">
+            <h4 style="font-size:1rem;">Best Value</h4>
+            <p>Competitive pricing with premium components. Maximum ROI on your solar investment.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-26.jpg" alt="Warranty backed"></div>
+          <div class="card-body">
+            <h4 style="font-size:1rem;">Warranty Backed</h4>
+            <p>25-year panel warranty, 10-year inverter warranty, and lifetime maintenance support.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="card-photo"><img src="images/web/web-27.jpg" alt="Fast installation"></div>
+          <div class="card-body">
+            <h4 style="font-size:1rem;">Fast Installation</h4>
+            <p>Professional installation completed within days, not weeks. Minimal disruption to your routine.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ COVERAGE ═══════ -->
+  <section id="coverage" class="section-alt">
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Our Reach</span>
+        <h2>Service Coverage</h2>
+        <p>Operating across Sri Lanka with regional offices for faster service.</p>
+      </div>
+      <div class="chips reveal">
+        <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=No+136,+St.+Sebastian+Street,+Pettah,+Mannar,+Sri+Lanka" target="_blank" rel="noopener">📍 Mannar (HQ) — No 136, St.Sebastian Street, Pettah</a>
+        <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=44,+Dr+Danister+de+Silva+Mawatha,+Baseline+Road,+Colombo+00900,+Sri+Lanka" target="_blank" rel="noopener">📍 Colombo — 44, Dr. Danister de Silva Mawatha (Baseline Road), Colombo 00900</a>
+        <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=No+77,+Manipay+Road,+Arukalmadam,+Jaffna,+Sri+Lanka" target="_blank" rel="noopener">📍 Jaffna — No 77, Manipay Road, Arukalmadam</a>
+        <a class="chip" href="https://www.google.com/maps/search/?api=1&amp;query=53/1/3,+Baily+Road,+Batticaloa,+Sri+Lanka" target="_blank" rel="noopener">📍 Batticaloa — 53/1/3, Baily Road</a>
+        <div class="chip plain">📍 Island-wide Service</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CONTACT ═══════ -->
+  <section id="contact">
+    <div class="wrap contact-logo"><img src="images/logo.png" alt="iFix Green Solutions" width="118" height="118"></div>
+    <div class="wrap">
+      <div class="head center reveal">
+        <span class="eyebrow">Get In Touch</span>
+        <h2>Contact Us</h2>
+        <p>Ready to go solar? Get a free site survey and quote today.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="reveal">
+          <h3 style="font-size:1.3rem;margin-bottom:18px;">Let's Talk Energy</h3>
+          <div class="contact-list">
+            <div class="c-item">
+              <div class="c-ico">📍</div>
+              <div><h4>Our Offices</h4>
+                <p><b>Mannar — Head Office</b><br>No 136, St. Sebastian Street, Pettah, Mannar<br>
+                  <a href="tel:+94706511650">070 65 11 650</a> &nbsp;·&nbsp; <a href="tel:+94232250110">023 22 50 110</a></p>
+                <p><b>Jaffna</b><br>No 77, Manipay Road, Arukalmadam, Jaffna<br>
+                  <a href="tel:+94706511658">070 65 11 658</a> &nbsp;·&nbsp; <a href="tel:+94773232312">077 32 32 312</a></p>
+                <p><b>Colombo</b><br>44, Dr. Danister de Silva Mawatha (Baseline Road), Colombo 00900<br>
+                  <a href="tel:+94706511656">070 65 11 656</a> &nbsp;·&nbsp; <a href="tel:+94771432110">077 14 32 110</a></p>
+                <p><b>Batticaloa</b><br>53/1/3, Baily Road, Batticaloa<br>
+                  <a href="tel:+94706511659">070 65 11 659</a> &nbsp;·&nbsp; <a href="tel:+94706511655">070 65 11 655</a></p>
+              </div>
+            </div>
+            <div class="c-item">
+              <div class="c-ico">📞</div>
+              <div><h4>Sales &amp; WhatsApp</h4>
+                <p><a href="tel:+94706511656">070 65 11 656</a></p>
+                <p><a href="tel:+94771432110">077 14 32 110</a></p>
+              </div>
+            </div>
+            <div class="c-item">
+              <div class="c-ico">✉️</div>
+              <div><h4>Email</h4><p><a href="mailto:ifixgreensolutions@gmail.com">ifixgreensolutions@gmail.com</a></p></div>
+            </div>
+            <div class="c-item">
+              <div class="c-ico">🕐</div>
+              <div><h4>Working Hours</h4><p>Mon - Sat: 8:00 AM - 6:00 PM</p></div>
+            </div>
+          </div>
+          <div class="socials">
+            <a href="https://www.facebook.com/ifixgreeensolutions" target="_blank" rel="noopener" class="soc" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.6 1.6-1.6h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/ifixgreensolutions" target="_blank" rel="noopener" class="soc" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm0 5.6A2.1 2.1 0 1 1 12 9.9a2.1 2.1 0 0 1 0 4.2zM16.6 7.2a.8.8 0 1 1-.8.8.8.8 0 0 1 .8-.8zM12 4c-2.2 0-2.5 0-3.4.05-.9.04-1.5.2-2 .4-.5.2-1 .5-1.4 1-.5.4-.8.9-1 1.4-.2.5-.4 1.1-.4 2C3.8 9.5 3.8 9.8 3.8 12s0 2.5.05 3.4c.04.9.2 1.5.4 2 .2.5.5 1 1 1.4.4.5.9.8 1.4 1 .5.2 1.1.4 2 .4.9.04 1.2.05 3.4.05s2.5 0 3.4-.05c.9-.04 1.5-.2 2-.4.5-.2 1-.5 1.4-1 .5-.4.8-.9 1-1.4.2-.5.4-1.1.4-2 .04-.9.05-1.2.05-3.4s0-2.5-.05-3.4c-.04-.9-.2-1.5-.4-2a3.8 3.8 0 0 0-1-1.4 3.8 3.8 0 0 0-1.4-1c-.5-.2-1.1-.4-2-.4C14.5 4 14.2 4 12 4zm0 1.5c2.1 0 2.4 0 3.3.05.8.04 1.2.17 1.5.28.4.15.6.3.9.6.3.3.5.5.6.9.1.3.2.7.3 1.5.04.9.05 1.2.05 3.2s0 2.3-.05 3.2c-.04.8-.17 1.2-.28 1.5-.1.4-.3.6-.6.9-.3.3-.5.5-.9.6-.3.1-.7.2-1.5.3-.9.04-1.2.05-3.3.05s-2.4 0-3.3-.05c-.8-.04-1.2-.17-1.5-.28-.4-.1-.6-.3-.9-.6-.3-.3-.5-.5-.6-.9-.1-.3-.2-.7-.3-1.5-.04-.9-.05-1.2-.05-3.2s0-2.3.05-3.2c.04-.8.17-1.2.28-1.5.1-.4.3-.6.6-.9.3-.3.5-.5.9-.6.3-.1.7-.2 1.5-.3.9-.04 1.2-.05 3.3-.05z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/@ifix_green_solutions" target="_blank" rel="noopener" class="soc" aria-label="TikTok">
+              <svg viewBox="0 0 24 24"><path d="M16.6 4c.3 1.7 1.4 2.9 3.4 3v2.6c-1.2.1-2.3-.3-3.4-1v6c0 3.6-3 5.4-6 4.7-2.2-.5-3.9-2.5-3.9-4.8 0-2.7 2.2-4.9 4.9-4.9.4 0 .8 0 1.1.1v2.7c-.3-.1-.7-.2-1.1-.2-1.3 0-2.3 1.1-2.3 2.4s1 2.4 2.3 2.4c1.5 0 2.6-1.1 2.6-2.8V4z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/@ifixgreensolutions5297" target="_blank" rel="noopener" class="soc" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M21.6 7.2c-.2-.8-.8-1.4-1.6-1.6-1.4-.4-7-.4-7-.4s-5.6 0-7 .4c-.8.2-1.4.8-1.6 1.6C4 8.7 4 12 4 12s0 3.3.4 4.8c.2.8.8 1.4 1.6 1.6 1.4.4 7 .4 7 .4s5.6 0 7-.4c-.8 0-1.4-.6-1.6-1.4.4-1.5.4-4.8.4-4.8s0-3.3-.4-4.8zM10 15V9l5 3-5 3z"/></svg>
+            </a>
+            <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="soc" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+            </a>
+            <a href="mailto:ifixgreensolutions@gmail.com" class="soc" aria-label="Email">
+              <svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6V7l-8 6-8-6z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card reveal">
+          <form id="contactForm" onsubmit="return sendViaWhatsApp(event)">
+            <div class="field"><label for="f-name">Your Name</label><input id="f-name" type="text" name="name" placeholder="Enter your name" required></div>
+            <div class="field"><label for="f-phone">Phone Number</label><input id="f-phone" type="tel" name="phone" placeholder="07X XXX XXXX" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" name="email" placeholder="your@email.com"></div>
+            <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Tell us about your project — system type, location, approximate roof size..."></textarea></div>
+            <button type="submit" class="btn btn-primary">Send Inquiry ⚡</button>
+            <p class="form-hint">Your details open in WhatsApp — we reply during working hours.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer>
+    <div class="wrap">
+      <img src="images/logo.png" alt="iFix Green Solutions" class="f-logo">
+      <div class="f-links">
+        <a href="#about">About</a>
+        <a href="#offers">Promotion</a>
+        <a href="#services">Services</a>
+        <a href="#products">Products</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+      </div>
+      <div class="f-social">
+        <a href="https://www.facebook.com/ifixgreeensolutions" target="_blank" rel="noopener" class="soc" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-7h2.4l.4-3h-2.8V9.1c0-.9.2-1.6 1.6-1.6h1.3V4.9c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7V11H8.3v3h2.4v7h2.8z"/></svg></a>
+        <a href="https://www.instagram.com/ifixgreensolutions" target="_blank" rel="noopener" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 8.5A3.5 3.5 0 1 0 12 15.5 3.5 3.5 0 0 0 12 8.5zm0 5.6A2.1 2.1 0 1 1 12 9.9a2.1 2.1 0 0 1 0 4.2zM16.6 7.2a.8.8 0 1 1-.8.8.8.8 0 0 1 .8-.8zM12 4c-2.2 0-2.5 0-3.4.05-.9.04-1.5.2-2 .4-.5.2-1 .5-1.4 1-.5.4-.8.9-1 1.4-.2.5-.4 1.1-.4 2C3.8 9.5 3.8 9.8 3.8 12s0 2.5.05 3.4c.04.9.2 1.5.4 2 .2.5.5 1 1 1.4.4.5.9.8 1.4 1 .5.2 1.1.4 2 .4.9.04 1.2.05 3.4.05s2.5 0 3.4-.05c.9-.04 1.5-.2 2-.4.5-.2 1-.5 1.4-1 .5-.4.8-.9 1-1.4.2-.5.4-1.1.4-2 .04-.9.05-1.2.05-3.4s0-2.5-.05-3.4c-.04-.9-.2-1.5-.4-2a3.8 3.8 0 0 0-1-1.4 3.8 3.8 0 0 0-1.4-1c-.5-.2-1.1-.4-2-.4C14.5 4 14.2 4 12 4zm0 1.5c2.1 0 2.4 0 3.3.05.8.04 1.2.17 1.5.28.4.15.6.3.9.6.3.3.5.5.6.9.1.3.2.7.3 1.5.04.9.05 1.2.05 3.2s0 2.3-.05 3.2c-.04.8-.17 1.2-.28 1.5-.1.4-.3.6-.6.9-.3.3-.5.5-.9.6-.3.1-.7.2-1.5.3-.9.04-1.2.05-3.3.05s-2.4 0-3.3-.05c-.8-.04-1.2-.17-1.5-.28-.4-.1-.6-.3-.9-.6-.3-.3-.5-.5-.6-.9-.1-.3-.2-.7-.3-1.5-.04-.9-.05-1.2-.05-3.2s0-2.3.05-3.2c.04-.8.17-1.2.28-1.5.1-.4.3-.6.6-.9.3-.3.5-.5.9-.6.3-.1.7-.2 1.5-.3.9-.04 1.2-.05 3.3-.05z"/></svg></a>
+        <a href="https://www.tiktok.com/@ifix_green_solutions" target="_blank" rel="noopener" class="soc" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 4c.3 1.7 1.4 2.9 3.4 3v2.6c-1.2.1-2.3-.3-3.4-1v6c0 3.6-3 5.4-6 4.7-2.2-.5-3.9-2.5-3.9-4.8 0-2.7 2.2-4.9 4.9-4.9.4 0 .8 0 1.1.1v2.7c-.3-.1-.7-.2-1.1-.2-1.3 0-2.3 1.1-2.3 2.4s1 2.4 2.3 2.4c1.5 0 2.6-1.1 2.6-2.8V4z"/></svg></a>
+        <a href="https://www.youtube.com/@ifixgreensolutions5297" target="_blank" rel="noopener" class="soc" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M21.6 7.2c-.2-.8-.8-1.4-1.6-1.6-1.4-.4-7-.4-7-.4s-5.6 0-7 .4c-.8.2-1.4.8-1.6 1.6C4 8.7 4 12 4 12s0 3.3.4 4.8c.2.8.8 1.4 1.6 1.6 1.4.4 7 .4 7 .4s5.6 0 7-.4c-.8 0-1.4-.6-1.6-1.4.4-1.5.4-4.8.4-4.8s0-3.3-.4-4.8zM10 15V9l5 3-5 3z"/></svg></a>
+        <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="soc" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg></a>
+        <a href="mailto:ifixgreensolutions@gmail.com" class="soc" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6V7l-8 6-8-6z"/></svg></a>
+      </div>
+      <p class="f-copy">&copy; 2026 iFix Green Solutions (Pvt) Ltd. All rights reserved. | SLSEA Registered</p>
+    </div>
+  </footer>
+
+  <!-- ═══════ FLOATING BUTTONS ═══════ -->
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+  <a href="https://wa.me/94706511656" target="_blank" rel="noopener" class="wa" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.9-1.2-4.8-4.2-4.9-4.4-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5-.1.1-.1.3-.2.4-.1.2-.3.3-.4.6-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.5 2.5 1.6.3.1.5.1.6-.1.1-.2.5-.7.7-.9.2-.2.3-.2.6-.1.2.1 1.4.7 1.7.8.2.1.4.2.4.3.1.1.1.5-.1 1z"/></svg>
+  </a>
+
+  <script>
+    // Header shadow on scroll
+    var header=document.getElementById('siteHeader');
+    var toTop=document.getElementById('toTop');
+    function onScroll(){
+      header.classList.toggle('scrolled',window.scrollY>10);
+      toTop.classList.toggle('show',window.scrollY>420);
+    }
+    window.addEventListener('scroll',onScroll,{passive:true});
+    onScroll();
+
+    // Mobile menu
+    var burger=document.getElementById('burger'), mob=document.getElementById('mobileNav');
+    burger.addEventListener('click',function(){
+      var open=mob.classList.toggle('open');
+      burger.setAttribute('aria-expanded',open?'true':'false');
+    });
+    mob.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){mob.classList.remove('open');burger.setAttribute('aria-expanded','false');});
+    });
+
+    // Back to top
+    toTop.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+    // Scroll reveal (JS-only enhancement; a timed fallback guarantees nothing stays hidden)
+    var revealEls=document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window && document.documentElement.classList.contains('js')){
+      var obs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target);} });
+      },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+      revealEls.forEach(function(el){obs.observe(el);});
+      setTimeout(function(){revealEls.forEach(function(el,i){ if(!el.classList.contains('in')) setTimeout(function(){el.classList.add('in');},i*20); });},2000);
+    } else {
+      revealEls.forEach(function(el){el.classList.add('in');});
+    }
+
+    // Counters
+    function runCounter(el){
+      var target=parseFloat(el.dataset.target), cur=0, step=target/60, isInt=Number.isInteger(target);
+      var t=setInterval(function(){
+        cur+=step;
+        if(cur>=target){cur=target;clearInterval(t);}
+        el.textContent=(isInt?Math.floor(cur):(Math.round(cur*10)/10))+(isInt?'+':'+');
+      },22);
+    }
+    if('IntersectionObserver' in window){
+      var cObs=new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ runCounter(e.target); cObs.unobserve(e.target);} });
+      },{threshold:.4});
+      document.querySelectorAll('.stat-num').forEach(function(el){cObs.observe(el);});
+    } else {
+      document.querySelectorAll('.stat-num').forEach(function(el){el.textContent=el.dataset.target+'+';});
+    }
+
+    // Active nav link
+    var secs=document.querySelectorAll('section[id]');
+    var anchors=document.querySelectorAll('.nav a');
+    function setActive(){
+      var pos=window.scrollY+140, current='';
+      secs.forEach(function(s){ if(s.offsetTop<=pos && s.offsetTop+s.offsetHeight>pos) current=s.id; });
+      anchors.forEach(function(a){
+        a.classList.toggle('active',(a.getAttribute('href')||'')==='#'+current);
+      });
+    }
+    window.addEventListener('scroll',setActive,{passive:true});
+    setActive();
+
+    // Contact form -> WhatsApp (same behaviour as the live site)
+    function sendViaWhatsApp(e){
+      e.preventDefault();
+      var f=e.target;
+      var name=f.querySelector("input[name=name]").value.trim();
+      var phone=f.querySelector("input[name=phone]").value.trim();
+      var email=(f.querySelector("input[name=email]").value||"").trim();
+      var msg=(f.querySelector("textarea[name=message]").value||"").trim();
+      var text="Hello iFix Green Solutions!\n\n";
+      text+="Name: "+name+"\n";
+      text+="Phone: "+phone+"\n";
+      if(email){text+="Email: "+email+"\n";}
+      if(msg){text+="Message: "+msg+"\n";}
+      window.open("https://wa.me/94706511656?text="+encodeURIComponent(text),"_blank");
+      return false;
+    }
+  </script>
+</body>
+</html>
